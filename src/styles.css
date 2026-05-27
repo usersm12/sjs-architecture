@@ -33,7 +33,7 @@
   --color-brand: var(--brand);
   --color-brand-foreground: var(--brand-foreground);
   --color-brand-dark: var(--brand-dark);
-  --font-display: "Playfair Display", Georgia, serif;
+  --font-display: "Poppins", system-ui, sans-serif;
   --font-sans: "Inter", system-ui, sans-serif;
   --shadow-card: 0 2px 12px -4px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.05);
   --shadow-card-hover: 0 8px 32px -8px rgba(204,0,0,0.15), 0 0 0 1.5px #CC0000;
