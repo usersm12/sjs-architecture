@@ -50,7 +50,7 @@ export function Header() {
             alt="SJS Architecture Solutions"
             className="h-12 w-auto object-contain"
           />
-          <div className="hidden sm:flex flex-col leading-none gap-0.5">
+          <div className="flex flex-col leading-none gap-0.5">
             <span className="font-display font-bold text-[13px] tracking-wide text-[#111111] uppercase">SJS Architecture</span>
             <span className="font-sans text-[10px] font-bold text-[#CC0000] uppercase tracking-[0.2em]">Solutions</span>
           </div>
