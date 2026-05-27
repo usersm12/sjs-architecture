@@ -47,13 +47,6 @@ const trustItems = [
   },
 ];
 
-const stats = [
-  { num: "50+", label: "Products" },
-  { num: "500+", label: "Happy Clients" },
-  { num: "10+", label: "Years Experience" },
-  { num: "5", label: "Services" },
-];
-
 const whyUs = [
   "High-quality, ISI-certified products",
   "Professional on-site application teams",
@@ -127,20 +120,6 @@ function HomePage() {
               </Link>
             </div>
           </motion.div>
-        </div>
-      </section>
-
-      {/* ─── STATS BAR ───────────────────────────────────────────── */}
-      <section className="bg-[#CC0000] py-12 md:py-16">
-        <div className="container-tight">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6 text-center">
-            {stats.map(({ num, label }) => (
-              <div key={label}>
-                <span className="font-display font-extrabold text-3xl md:text-4xl text-white">{num}</span>
-                <p className="font-sans font-semibold text-xs uppercase tracking-widest text-white/70 mt-2">{label}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

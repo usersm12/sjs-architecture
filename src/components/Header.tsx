@@ -44,12 +44,16 @@ export function Header() {
       {/* Main header */}
       <div className="container-tight flex items-center justify-between h-[68px]">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2.5 shrink-0 group">
+        <Link to="/" className="flex items-center gap-3 shrink-0 group">
           <img
             src={logoRed}
             alt="SJS Architecture Solutions"
-            className="h-14 w-auto object-contain"
+            className="h-12 w-auto object-contain"
           />
+          <div className="flex flex-col leading-none hidden sm:block">
+            <span className="font-display font-bold text-sm text-[#111111]">SJS</span>
+            <span className="font-sans text-[10px] font-semibold text-[#CC0000] uppercase tracking-wider">Chemicals</span>
+          </div>
         </Link>
 
         {/* Nav — desktop */}
