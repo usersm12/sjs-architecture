@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Layout } from "@/components/Layout";
-import { PageHero } from "@/components/PageHero";
-import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
 import { productCategories } from "@/data/products";
+import { motion } from "framer-motion";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -30,107 +30,129 @@ function ContactPage() {
   const contacts = [
     {
       Icon: MapPin,
-      title: "Address",
-      lines: [
-        "PI-208, Sitaram Park,",
-        "Dharti Tyres Street,",
-        "Opp. Rajkot Taluka Police Station,",
-        "Motamava, Rajkot — 360005, Gujarat, India",
-      ],
+      title: "Our Address",
+      content: "PI-208, Sitaram Park, Dharti Tyres Street, Opp. Rajkot Taluka Police Station, Motamava, Rajkot — 360005, Gujarat, India",
+      isText: true,
     },
     {
       Icon: Phone,
-      title: "Phone",
-      lines: [
-        { label: "", value: "+91 85300 81327", href: "tel:+918530081327" },
-      ],
+      title: "Phone Number",
+      content: "+91 85300 81327",
+      href: "tel:+918530081327",
+      isText: false,
     },
     {
       Icon: Mail,
-      title: "Email",
-      lines: [{ label: "", value: "rupeshgohel376@gmail.com", href: "mailto:rupeshgohel376@gmail.com" }],
+      title: "Email Address",
+      content: "rupeshgohel376@gmail.com",
+      href: "mailto:rupeshgohel376@gmail.com",
+      isText: false,
     },
   ];
 
   return (
     <Layout>
-      <PageHero
-        title="Contact Us"
-        subtitle="Get in touch for product enquiries, waterproofing services, or project requirements."
-      />
+      {/* Page header */}
+      <section className="bg-[#111111] py-16 md:py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-dot-pattern opacity-20" />
+        <div className="container-tight relative">
+          <div className="label-tag mb-4" style={{ color: "#CC0000" }}>Get in Touch</div>
+          <h1 className="font-display font-bold text-3xl md:text-5xl text-white mt-2">
+            Contact Us
+          </h1>
+          <p className="mt-4 text-white/55 max-w-2xl text-lg">
+            Enquire about products, waterproofing services, or any project requirement in Rajkot, Gujarat.
+          </p>
+        </div>
+      </section>
 
-      <section className="container-tight py-16 md:py-20">
-        {/* Contact Cards */}
-        <div className="grid gap-6 md:grid-cols-3 mb-16">
-          {contacts.map(({ Icon, title, lines }) => (
-            <div key={title} className="bg-white border border-border rounded-lg p-6 hover:border-brand/40 hover:shadow-card transition-all">
-              <div className="h-12 w-12 rounded-md bg-brand text-brand-foreground flex items-center justify-center mb-4">
-                <Icon className="h-6 w-6" />
+      <section className="container-tight py-14 md:py-20">
+        {/* Contact cards */}
+        <div className="grid gap-5 md:grid-cols-3 mb-14">
+          {contacts.map(({ Icon, title, content, href, isText }, i) => (
+            <motion.div
+              key={title}
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.07 }}
+              className="bg-white border border-border p-7 hover:border-[#CC0000] hover:shadow-[0_8px_32px_-8px_rgba(204,0,0,0.1)] transition-all"
+            >
+              <div className="h-12 w-12 bg-[#CC0000] flex items-center justify-center mb-5">
+                <Icon className="h-6 w-6 text-white" />
               </div>
-              <h3 className="font-display font-bold text-lg text-charcoal mb-3">{title}</h3>
-              <div className="space-y-2 text-sm text-muted-foreground">
-                {lines.map((line, i) =>
-                  typeof line === "string" ? (
-                    <p key={i}>{line}</p>
-                  ) : (
-                    <p key={i}>
-                      {line.label && <span className="text-charcoal font-medium">{line.label}: </span>}
-                      <a href={line.href} className="hover:text-brand transition-colors break-all">
-                        {line.value}
-                      </a>
-                    </p>
-                  )
-                )}
-              </div>
-            </div>
+              <h3 className="font-sans font-bold text-xs uppercase tracking-widest text-muted-foreground mb-3">
+                {title}
+              </h3>
+              {isText ? (
+                <p className="text-sm text-[#333333] leading-relaxed">{content}</p>
+              ) : (
+                <a
+                  href={href}
+                  className="text-[#111111] font-semibold hover:text-[#CC0000] transition-colors break-all"
+                >
+                  {content}
+                </a>
+              )}
+            </motion.div>
           ))}
         </div>
 
         {/* Form + Map */}
         <div className="grid gap-10 lg:grid-cols-5">
-          <form onSubmit={handleSubmit} className="lg:col-span-3 bg-white border border-border rounded-lg p-7 md:p-9 space-y-5">
+          {/* Form */}
+          <form
+            onSubmit={handleSubmit}
+            className="lg:col-span-3 bg-white border border-border p-8 md:p-10 space-y-6"
+          >
             <div>
-              <span className="text-brand font-semibold uppercase text-xs tracking-wider">Send a message</span>
-              <h2 className="font-display font-extrabold text-2xl md:text-3xl text-charcoal mt-2 tracking-tight">
-                Tell us about your requirement
+              <div className="label-tag mb-3">Send a Message</div>
+              <h2 className="font-display font-bold text-2xl md:text-3xl text-[#111111]">
+                Tell Us About Your Requirement
               </h2>
+              <p className="text-muted-foreground mt-2 text-sm">
+                Fill in the form below and we'll get back to you promptly.
+              </p>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              <Field label="Name" required>
+            <div className="grid gap-5 sm:grid-cols-2">
+              <FormField label="Full Name" required>
                 <input
                   type="text"
                   required
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  className="w-full px-4 py-2.5 border border-border rounded-md bg-white focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all"
+                  placeholder="Your name"
+                  className="w-full px-4 py-3 border border-border bg-white text-[#111111] placeholder:text-muted-foreground focus:outline-none focus:border-[#CC0000] focus:ring-2 focus:ring-[#CC0000]/15 transition-all text-sm"
                 />
-              </Field>
-              <Field label="Phone Number" required>
+              </FormField>
+              <FormField label="Phone Number" required>
                 <input
                   type="tel"
                   required
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                  className="w-full px-4 py-2.5 border border-border rounded-md bg-white focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all"
+                  placeholder="+91 XXXXX XXXXX"
+                  className="w-full px-4 py-3 border border-border bg-white text-[#111111] placeholder:text-muted-foreground focus:outline-none focus:border-[#CC0000] focus:ring-2 focus:ring-[#CC0000]/15 transition-all text-sm"
                 />
-              </Field>
+              </FormField>
             </div>
 
-            <Field label="Email">
+            <FormField label="Email Address">
               <input
                 type="email"
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className="w-full px-4 py-2.5 border border-border rounded-md bg-white focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all"
+                placeholder="your@email.com"
+                className="w-full px-4 py-3 border border-border bg-white text-[#111111] placeholder:text-muted-foreground focus:outline-none focus:border-[#CC0000] focus:ring-2 focus:ring-[#CC0000]/15 transition-all text-sm"
               />
-            </Field>
+            </FormField>
 
-            <Field label="Product / Service of Interest">
+            <FormField label="Product / Service of Interest">
               <select
                 value={form.interest}
                 onChange={(e) => setForm({ ...form, interest: e.target.value })}
-                className="w-full px-4 py-2.5 border border-border rounded-md bg-white focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all"
+                className="w-full px-4 py-3 border border-border bg-white text-[#333333] focus:outline-none focus:border-[#CC0000] focus:ring-2 focus:ring-[#CC0000]/15 transition-all text-sm"
               >
                 <option value="">Select a category (optional)</option>
                 {productCategories.map((c) => (
@@ -141,39 +163,56 @@ function ContactPage() {
                 <option value="Premix Work">Premix Work</option>
                 <option value="Other">Other</option>
               </select>
-            </Field>
+            </FormField>
 
-            <Field label="Message" required>
+            <FormField label="Message" required>
               <textarea
                 required
                 rows={4}
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className="w-full px-4 py-2.5 border border-border rounded-md bg-white focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all resize-none"
+                placeholder="Describe your requirement..."
+                className="w-full px-4 py-3 border border-border bg-white text-[#111111] placeholder:text-muted-foreground focus:outline-none focus:border-[#CC0000] focus:ring-2 focus:ring-[#CC0000]/15 transition-all text-sm resize-none"
               />
-            </Field>
+            </FormField>
 
             <button
               type="submit"
-              className="inline-flex items-center gap-2 bg-brand hover:bg-brand-dark text-brand-foreground px-6 py-3 rounded-md font-semibold transition-all shadow-elegant"
+              className="inline-flex items-center gap-2 bg-[#CC0000] hover:bg-[#a80000] text-white px-8 py-3.5 font-sans font-bold text-sm uppercase tracking-wide transition-colors"
             >
-              <Send className="h-4 w-4" />
-              Send Enquiry
+              Send Enquiry <ArrowRight className="h-4 w-4" />
             </button>
           </form>
 
-          {/* Map */}
-          <div className="lg:col-span-2 rounded-lg overflow-hidden border border-border min-h-[400px]">
-            <iframe
-              title="SJS Architecture Solutions Location"
-              src="https://www.google.com/maps?q=Motamava,+Rajkot,+Gujarat+360005&output=embed"
-              width="100%"
-              height="100%"
-              style={{ border: 0, minHeight: "400px" }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+          {/* Map + info */}
+          <div className="lg:col-span-2 flex flex-col gap-5">
+            <div className="flex-1 border border-border overflow-hidden min-h-[350px]">
+              <iframe
+                title="SJS Architecture Solutions Location"
+                src="https://www.google.com/maps?q=Motamava,+Rajkot,+Gujarat+360005&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0, minHeight: "350px" }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+
+            <div className="bg-[#CC0000] p-7">
+              <p className="font-sans text-xs font-bold uppercase tracking-widest text-white/60 mb-3">
+                Quick Contact
+              </p>
+              <a
+                href="tel:+918530081327"
+                className="font-display font-bold text-2xl text-white hover:text-white/80 transition-colors block mb-2"
+              >
+                +91 85300 81327
+              </a>
+              <p className="text-white/70 text-sm">
+                Monday – Saturday, 9 AM – 7 PM
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -181,11 +220,12 @@ function ContactPage() {
   );
 }
 
-function Field({ label, required, children }: { label: string; required?: boolean; children: React.ReactNode }) {
+function FormField({ label, required, children }: { label: string; required?: boolean; children: React.ReactNode }) {
   return (
     <label className="block">
-      <span className="block text-sm font-semibold text-charcoal mb-1.5">
-        {label} {required && <span className="text-brand">*</span>}
+      <span className="block font-sans font-semibold text-[13px] text-[#333333] mb-2">
+        {label}
+        {required && <span className="text-[#CC0000] ml-1">*</span>}
       </span>
       {children}
     </label>

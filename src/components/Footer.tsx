@@ -1,74 +1,149 @@
 import { Link } from "@tanstack/react-router";
-import { Phone, Mail, MapPin } from "lucide-react";
-import logoLight from "@/assets/sjs-logo-light.png";
+import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
+
+const productLinks = [
+  "Concrete Admixtures",
+  "Waterproofing Chemicals",
+  "Tile Adhesive & Grout",
+  "Repair & Flooring",
+  "Building Materials",
+];
+
+const serviceLinks = [
+  "Construction Chemicals Supply",
+  "Waterproofing Services",
+  "Epoxy Grout Work",
+  "Waterproofing Work",
+  "Premix Work",
+];
 
 export function Footer() {
   return (
-    <footer className="bg-charcoal text-charcoal-foreground">
-      <div className="container-tight py-14 grid gap-10 md:grid-cols-4">
+    <footer className="bg-[#111111] text-white">
+      {/* CTA strip */}
+      <div className="bg-[#CC0000]">
+        <div className="container-tight py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <p className="font-sans text-xs font-bold uppercase tracking-widest text-white/70 mb-1">
+              Ready to get started?
+            </p>
+            <h3 className="font-display font-bold text-2xl md:text-3xl text-white">
+              Talk to our construction chemicals experts
+            </h3>
+          </div>
+          <div className="flex flex-wrap gap-3 shrink-0">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 bg-white text-[#CC0000] px-6 py-3 text-sm font-bold uppercase tracking-wide hover:bg-white/90 transition-colors"
+            >
+              Get a Quote <ArrowRight className="h-4 w-4" />
+            </Link>
+            <a
+              href="tel:+918530081327"
+              className="inline-flex items-center gap-2 border-2 border-white/40 text-white px-6 py-3 text-sm font-bold uppercase tracking-wide hover:border-white transition-colors"
+            >
+              <Phone className="h-4 w-4" />
+              Call Now
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Main footer body */}
+      <div className="container-tight py-16 grid gap-10 md:grid-cols-4">
+        {/* Brand */}
         <div className="md:col-span-1">
-          <div className="flex items-center gap-3">
-            <img
-              src={logoLight}
-              alt="SJS Architecture Solutions"
-              className="h-16 w-16 object-contain shrink-0"
-            />
+          <div className="flex items-center gap-3 mb-5">
+            <div className="h-10 w-10 bg-[#CC0000] flex items-center justify-center shrink-0">
+              <span className="font-sans font-black text-white text-sm tracking-tight">SJS</span>
+            </div>
             <div className="flex flex-col leading-none">
-              <h3 className="font-display font-extrabold text-sm tracking-tight">SJS ARCHITECTURE SOLUTIONS</h3>
-              <p className="text-brand font-semibold text-xs uppercase tracking-wider mt-1.5">
-                Rajkot · Gujarat · India
-              </p>
+              <span className="font-sans font-bold text-[12px] tracking-tight text-white">
+                SJS ARCHITECTURE SOLUTIONS
+              </span>
+              <span className="text-[#CC0000] font-semibold text-[10px] uppercase tracking-widest mt-1">
+                Construction Chemicals
+              </span>
             </div>
           </div>
-          <p className="text-sm text-white/60 mt-4 leading-relaxed">
-            Your complete partner for construction chemicals, waterproofing services, epoxy grouting, and building materials in Rajkot.
+          <p className="text-sm text-white/50 leading-relaxed">
+            Your complete partner for construction chemicals, waterproofing services, and building materials in Rajkot, Gujarat.
           </p>
         </div>
 
+        {/* Products */}
         <div>
-          <h4 className="font-semibold text-sm uppercase tracking-wider mb-4">Quick Links</h4>
-          <ul className="space-y-2 text-sm text-white/70">
-            <li><Link to="/" className="hover:text-brand transition-colors">Home</Link></li>
-            <li><Link to="/products" className="hover:text-brand transition-colors">Products</Link></li>
-            <li><Link to="/services" className="hover:text-brand transition-colors">Services</Link></li>
-            <li><Link to="/about" className="hover:text-brand transition-colors">About</Link></li>
-            <li><Link to="/contact" className="hover:text-brand transition-colors">Contact</Link></li>
+          <h4 className="font-sans font-bold text-xs uppercase tracking-widest text-white/40 mb-5">Products</h4>
+          <ul className="space-y-2.5">
+            {productLinks.map((item) => (
+              <li key={item}>
+                <Link
+                  to="/products"
+                  className="text-sm text-white/60 hover:text-white transition-colors flex items-center gap-2 group"
+                >
+                  <span className="h-px w-3 bg-white/20 group-hover:bg-[#CC0000] group-hover:w-4 transition-all" />
+                  {item}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
+        {/* Services */}
         <div>
-          <h4 className="font-semibold text-sm uppercase tracking-wider mb-4">Our Services</h4>
-          <ul className="space-y-2 text-sm text-white/70">
-            <li>Construction Chemicals Supply</li>
-            <li>Waterproofing Services</li>
-            <li>Epoxy Grout Work</li>
-            <li>Waterproofing Work</li>
-            <li>Premix Work</li>
+          <h4 className="font-sans font-bold text-xs uppercase tracking-widest text-white/40 mb-5">Services</h4>
+          <ul className="space-y-2.5">
+            {serviceLinks.map((item) => (
+              <li key={item}>
+                <Link
+                  to="/services"
+                  className="text-sm text-white/60 hover:text-white transition-colors flex items-center gap-2 group"
+                >
+                  <span className="h-px w-3 bg-white/20 group-hover:bg-[#CC0000] group-hover:w-4 transition-all" />
+                  {item}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
+        {/* Contact */}
         <div>
-          <h4 className="font-semibold text-sm uppercase tracking-wider mb-4">Contact</h4>
-          <ul className="space-y-3 text-sm text-white/70">
-            <li className="flex items-start gap-2">
-              <Phone className="h-4 w-4 mt-0.5 text-brand shrink-0" />
-              <a href="tel:+918530081327" className="hover:text-brand">+91 85300 81327</a>
+          <h4 className="font-sans font-bold text-xs uppercase tracking-widest text-white/40 mb-5">Contact</h4>
+          <ul className="space-y-4 text-sm text-white/60">
+            <li className="flex items-start gap-3">
+              <MapPin className="h-4 w-4 mt-0.5 text-[#CC0000] shrink-0" />
+              <span className="leading-relaxed">
+                PI-208, Sitaram Park, Dharti Tyres Street,<br />
+                Opp. Rajkot Taluka Police Station,<br />
+                Motamava, Rajkot — 360005, Gujarat
+              </span>
             </li>
-            <li className="flex items-start gap-2">
-              <Mail className="h-4 w-4 mt-0.5 text-brand shrink-0" />
-              <a href="mailto:rupeshgohel376@gmail.com" className="hover:text-brand break-all">rupeshgohel376@gmail.com</a>
+            <li className="flex items-center gap-3">
+              <Phone className="h-4 w-4 text-[#CC0000] shrink-0" />
+              <a href="tel:+918530081327" className="hover:text-white transition-colors">
+                +91 85300 81327
+              </a>
             </li>
-            <li className="flex items-start gap-2">
-              <MapPin className="h-4 w-4 mt-0.5 text-brand shrink-0" />
-              <span>PI-208, Sitaram Park, Dharti Tyres Street, Opp. Rajkot Taluka Police Station, Motamava, Rajkot — 360005, Gujarat</span>
+            <li className="flex items-center gap-3">
+              <Mail className="h-4 w-4 text-[#CC0000] shrink-0" />
+              <a href="mailto:rupeshgohel376@gmail.com" className="hover:text-white transition-colors break-all">
+                rupeshgohel376@gmail.com
+              </a>
             </li>
           </ul>
         </div>
       </div>
 
+      {/* Bottom bar */}
       <div className="border-t border-white/10">
-        <div className="container-tight py-5 text-center text-xs text-white/50">
-          © {new Date().getFullYear()} SJS Architecture Solutions. All rights reserved.
+        <div className="container-tight py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/30">
+          <span>© {new Date().getFullYear()} SJS Architecture Solutions. All rights reserved.</span>
+          <div className="flex items-center gap-5">
+            <Link to="/" className="hover:text-white/60 transition-colors">Home</Link>
+            <Link to="/products" className="hover:text-white/60 transition-colors">Products</Link>
+            <Link to="/contact" className="hover:text-white/60 transition-colors">Contact</Link>
+          </div>
         </div>
       </div>
     </footer>
