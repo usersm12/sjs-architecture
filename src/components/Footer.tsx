@@ -53,15 +53,17 @@ export function Footer() {
       <div className="container-tight py-16 grid gap-10 md:grid-cols-4">
         {/* Brand */}
         <div className="md:col-span-1">
-          <div className="flex items-center gap-3 mb-5">
-            <div className="h-10 w-10 bg-[#CC0000] flex items-center justify-center shrink-0">
-              <span className="font-sans font-black text-white text-sm tracking-tight">SJS</span>
-            </div>
+          <div className="flex items-center gap-2.5 mb-5">
+            <img
+              src="/images/image.png"
+              alt="SJS Architecture Solutions"
+              className="h-12 w-auto object-contain"
+            />
             <div className="flex flex-col leading-none">
-              <span className="font-sans font-bold text-[12px] tracking-tight text-white">
+              <span className="font-sans font-bold text-[11px] tracking-tight text-white">
                 SJS ARCHITECTURE SOLUTIONS
               </span>
-              <span className="text-[#CC0000] font-semibold text-[10px] uppercase tracking-widest mt-1">
+              <span className="text-[#CC0000] font-semibold text-[9px] uppercase tracking-widest mt-1">
                 Construction Chemicals
               </span>
             </div>

@@ -43,16 +43,17 @@ export function Header() {
       {/* Main header */}
       <div className="container-tight flex items-center justify-between h-[68px]">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 shrink-0">
-          {/* Red square logo mark */}
-          <div className="h-10 w-10 bg-[#CC0000] flex items-center justify-center shrink-0">
-            <span className="font-sans font-black text-white text-sm tracking-tight">SJS</span>
-          </div>
-          <div className="flex flex-col leading-none">
-            <span className="font-sans font-bold text-[13px] tracking-tight text-[#111111]">
+        <Link to="/" className="flex items-center gap-2.5 shrink-0">
+          <img
+            src="/images/image.png"
+            alt="SJS Architecture Solutions"
+            className="h-10 w-auto object-contain"
+          />
+          <div className="flex flex-col leading-none hidden sm:flex">
+            <span className="font-sans font-bold text-[12px] tracking-tight text-[#111111]">
               SJS ARCHITECTURE SOLUTIONS
             </span>
-            <span className="text-[10px] font-semibold text-[#CC0000] uppercase tracking-widest mt-0.5">
+            <span className="text-[9px] font-semibold text-[#CC0000] uppercase tracking-widest mt-0.5">
               Construction Chemicals
             </span>
           </div>
