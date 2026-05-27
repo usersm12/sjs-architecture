@@ -35,39 +35,39 @@
   --color-brand-dark: var(--brand-dark);
   --font-display: "Poppins", system-ui, sans-serif;
   --font-sans: "Inter", system-ui, sans-serif;
-  --shadow-elegant: 0 10px 30px -10px color-mix(in oklab, var(--brand) 25%, transparent);
+  --shadow-elegant: 0 10px 30px -10px color-mix(in oklab, var(--brand) 30%, transparent);
   --shadow-card: 0 4px 20px -8px oklch(0 0 0 / 0.15);
 }
 
 :root {
   --radius: 0.5rem;
-  /* Brand: Deep red #C0001A */
-  --brand: oklch(0.49 0.21 28);
+  /* Brand: SJS Red #CC0000 */
+  --brand: oklch(0.52 0.23 27);
   --brand-foreground: oklch(1 0 0);
-  --brand-dark: oklch(0.38 0.18 28);
-  /* Charcoal #1D1D1D */
-  --charcoal: oklch(0.21 0 0);
+  --brand-dark: oklch(0.41 0.20 27);
+  /* Charcoal #1A1A1A */
+  --charcoal: oklch(0.20 0 0);
   --charcoal-foreground: oklch(0.98 0 0);
 
   --background: oklch(1 0 0);
-  --foreground: oklch(0.21 0 0);
+  --foreground: oklch(0.20 0 0);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.21 0 0);
+  --card-foreground: oklch(0.20 0 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.21 0 0);
-  --primary: oklch(0.49 0.21 28);
+  --popover-foreground: oklch(0.20 0 0);
+  --primary: oklch(0.52 0.23 27);
   --primary-foreground: oklch(1 0 0);
   --secondary: oklch(0.96 0 0);
-  --secondary-foreground: oklch(0.21 0 0);
+  --secondary-foreground: oklch(0.20 0 0);
   --muted: oklch(0.96 0 0);
   --muted-foreground: oklch(0.45 0 0);
   --accent: oklch(0.96 0 0);
-  --accent-foreground: oklch(0.21 0 0);
-  --destructive: oklch(0.49 0.21 28);
+  --accent-foreground: oklch(0.20 0 0);
+  --destructive: oklch(0.52 0.23 27);
   --destructive-foreground: oklch(1 0 0);
   --border: oklch(0.9 0 0);
   --input: oklch(0.9 0 0);
-  --ring: oklch(0.49 0.21 28);
+  --ring: oklch(0.52 0.23 27);
 }
 
 @layer base {
@@ -113,9 +113,9 @@
   .hero-overlay {
     background: linear-gradient(
       135deg,
-      oklch(0.15 0 0 / 0.92) 0%,
-      oklch(0.21 0 0 / 0.85) 50%,
-      oklch(0.38 0.18 28 / 0.65) 100%
+      oklch(0.13 0 0 / 0.93) 0%,
+      oklch(0.18 0 0 / 0.87) 50%,
+      oklch(0.41 0.20 27 / 0.60) 100%
     );
   }
 }

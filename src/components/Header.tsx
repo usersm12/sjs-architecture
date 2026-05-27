@@ -35,11 +35,11 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           <a
-            href="tel:+919099880842"
+            href="tel:+918530081327"
             className="hidden md:flex items-center gap-2 bg-brand text-brand-foreground px-4 py-2.5 rounded-md font-semibold text-sm hover:bg-brand-dark transition-colors"
           >
             <Phone className="h-4 w-4" />
-            90998 80842
+            85300 81327
           </a>
           <button
             className="lg:hidden p-2 text-charcoal"
@@ -67,11 +67,11 @@ export function Header() {
               </Link>
             ))}
             <a
-              href="tel:+919099880842"
+              href="tel:+918530081327"
               className="mt-3 flex items-center justify-center gap-2 bg-brand text-brand-foreground px-4 py-3 rounded-md font-semibold"
             >
               <Phone className="h-4 w-4" />
-              Call: 90998 80842
+              Call: 85300 81327
             </a>
           </nav>
         </div>

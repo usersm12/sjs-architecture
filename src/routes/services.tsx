@@ -2,24 +2,43 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
-import { Hammer, FlaskConical, Building2, Truck, Wrench, ClipboardList, ArrowRight } from "lucide-react";
+import { Package, Droplets, Layers, Hammer, ClipboardList, ArrowRight } from "lucide-react";
 
 const services = [
-  { Icon: Hammer, title: "Construction Material Supply", desc: "We provide high-quality construction materials such as cement, sand, aggregates, and related products for residential and commercial projects of all sizes." },
-  { Icon: FlaskConical, title: "Construction Chemical Solutions", desc: "We supply Redwop's complete range of waterproofing products, admixtures, and protective chemicals to enhance the strength and durability of your structures." },
-  { Icon: Building2, title: "Building & Infrastructure Support", desc: "Complete material and support solutions for residential and commercial construction projects — from foundation to finish." },
-  { Icon: Truck, title: "Contractor & Site Supply Services", desc: "We ensure timely delivery of required materials and chemical solutions directly to contractors and construction sites across the Kutch region." },
-  { Icon: Wrench, title: "Repair & Maintenance Solutions", desc: "Effective solutions for repairing, maintaining, and improving the life of existing structures — including crack filling, waterproofing, and polymer mortars." },
-  { Icon: ClipboardList, title: "Project-Based Supply Services", desc: "Customized material supply and support for both small and large-scale projects — with consistent quality, reliable timelines, and expert guidance." },
+  {
+    Icon: Package,
+    title: "Construction Chemicals Supply",
+    desc: "We supply all types of high-quality construction chemicals including concrete admixtures, waterproofing chemicals, tile adhesives, grouts, coatings, repair mortars, and much more. Reliable stock for residential and commercial projects of every scale.",
+  },
+  {
+    Icon: Droplets,
+    title: "Waterproofing Service Provider",
+    desc: "Professional waterproofing services for terraces, rooftops, basements, bathrooms, and retaining walls. We use proven systems — liquid membranes, crystalline coatings, cement-based systems — applied by our trained team.",
+  },
+  {
+    Icon: Layers,
+    title: "Epoxy Grout Work",
+    desc: "Expert epoxy grouting for tile joints, industrial floors, and high-traffic areas. Epoxy grouts are stain-resistant, durable, and ideal for kitchens, hospitals, factories, and commercial spaces.",
+  },
+  {
+    Icon: Hammer,
+    title: "Waterproofing Work",
+    desc: "On-site waterproofing application using the best products for your specific situation — whether it's a new construction terrace, a leaking roof, or a wet basement. We assess, recommend, and execute.",
+  },
+  {
+    Icon: ClipboardList,
+    title: "Premix Work",
+    desc: "On-site premix mortar application for wall plastering, block laying, tile fixing, and floor screeding. Our team ensures consistent quality and smooth finishes every time.",
+  },
 ];
 
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Neehal Trade and Infra | Construction Supply Gandhidham" },
-      { name: "description", content: "Construction material supply, chemical solutions, repair & maintenance, and project-based supply services across Kutch and Gandhidham." },
-      { property: "og:title", content: "Our Services — Neehal Trade and Infra" },
-      { property: "og:description", content: "Beyond supplying products — your complete construction solutions partner in Kutch." },
+      { title: "Services — SJS Architecture Solutions | Waterproofing & Chemicals Rajkot" },
+      { name: "description", content: "Construction chemicals supply, waterproofing services, epoxy grout work, and premix application in Rajkot, Gujarat." },
+      { property: "og:title", content: "Our Services — SJS Architecture Solutions" },
+      { property: "og:description", content: "Professional waterproofing, epoxy grouting, and construction chemical supply in Rajkot." },
     ],
   }),
   component: ServicesPage,
@@ -30,7 +49,7 @@ function ServicesPage() {
     <Layout>
       <PageHero
         title="Our Services"
-        subtitle="Beyond supplying products — we're your complete construction solutions partner."
+        subtitle="We supply construction chemicals and apply them too — complete solutions from one trusted partner."
       />
 
       <div className="container-tight py-16 md:py-20">
@@ -57,8 +76,11 @@ function ServicesPage() {
           <div className="absolute inset-0 bg-grid opacity-30" />
           <div className="relative">
             <h2 className="font-display font-extrabold text-2xl md:text-4xl tracking-tight">
-              Have a project requirement? Let's talk.
+              Have a project in Rajkot? Let's talk.
             </h2>
+            <p className="mt-4 text-white/65 text-lg max-w-xl mx-auto">
+              Tell us your requirement and we'll recommend the right chemicals and services for your project.
+            </p>
             <Link
               to="/contact"
               className="mt-7 inline-flex items-center gap-2 bg-brand hover:bg-brand-dark text-brand-foreground px-7 py-3.5 rounded-md font-semibold transition-all"

@@ -14,7 +14,7 @@ export function PageHero({ title, subtitle }: { title: string; subtitle?: string
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand/40 bg-brand/10 text-brand-foreground text-xs font-semibold uppercase tracking-wider mb-5">
             <span className="h-1.5 w-1.5 rounded-full bg-brand" />
-            Neehal Trade and Infra
+            SJS Architecture Solutions
           </div>
           <h1 className="font-display font-extrabold text-4xl md:text-6xl tracking-tight text-balance">
             {title}

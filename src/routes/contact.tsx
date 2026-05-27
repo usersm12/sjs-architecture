@@ -8,10 +8,10 @@ import { productCategories } from "@/data/products";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Neehal Trade and Infra | Gandhidham, Kutch" },
-      { name: "description", content: "Contact Neehal Trade and Infra in Gandhidham for product enquiries, pricing, or project requirements. Call +91 90998 80842 or email neehaltrade@gmail.com." },
-      { property: "og:title", content: "Contact Neehal Trade and Infra" },
-      { property: "og:description", content: "Get in touch for product enquiries, pricing, or project requirements." },
+      { title: "Contact — SJS Architecture Solutions | Rajkot, Gujarat" },
+      { name: "description", content: "Contact SJS Architecture Solutions in Rajkot for product enquiries, waterproofing services, or project requirements. Call +91 85300 81327." },
+      { property: "og:title", content: "Contact SJS Architecture Solutions" },
+      { property: "og:description", content: "Get in touch for product enquiries, waterproofing services, or project requirements in Rajkot." },
     ],
   }),
   component: ContactPage,
@@ -24,7 +24,7 @@ function ContactPage() {
     e.preventDefault();
     const subject = `Enquiry from ${form.name}${form.interest ? ` — ${form.interest}` : ""}`;
     const body = `Name: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email}\nInterest: ${form.interest}\n\nMessage:\n${form.message}`;
-    window.location.href = `mailto:neehaltrade@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:rupeshgohel376@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   const contacts = [
@@ -32,25 +32,23 @@ function ContactPage() {
       Icon: MapPin,
       title: "Address",
       lines: [
-        "Ground Floor, Shop No. 27,",
-        "Gurukul City Centre, Plot No. 68 & 69,",
-        "Rambhag Road, Ward DC2,",
-        "Gandhidham — Kutch, Gujarat 370 201",
+        "PI-208, Sitaram Park,",
+        "Dharti Tyres Street,",
+        "Opp. Rajkot Taluka Police Station,",
+        "Motamava, Rajkot — 360005, Gujarat, India",
       ],
     },
     {
       Icon: Phone,
       title: "Phone",
       lines: [
-        { label: "Viththal Prajapati", value: "+91 90998 80842", href: "tel:+919099880842" },
-        { label: "Naresh Prajapati", value: "+91 85303 01267", href: "tel:+918530301267" },
-        { label: "Office", value: "+91 84600 52617", href: "tel:+918460052617" },
+        { label: "", value: "+91 85300 81327", href: "tel:+918530081327" },
       ],
     },
     {
       Icon: Mail,
       title: "Email",
-      lines: [{ label: "", value: "neehaltrade@gmail.com", href: "mailto:neehaltrade@gmail.com" }],
+      lines: [{ label: "", value: "rupeshgohel376@gmail.com", href: "mailto:rupeshgohel376@gmail.com" }],
     },
   ];
 
@@ -58,7 +56,7 @@ function ContactPage() {
     <Layout>
       <PageHero
         title="Contact Us"
-        subtitle="Get in touch for product enquiries, pricing, or project requirements."
+        subtitle="Get in touch for product enquiries, waterproofing services, or project requirements."
       />
 
       <section className="container-tight py-16 md:py-20">
@@ -138,7 +136,9 @@ function ContactPage() {
                 {productCategories.map((c) => (
                   <option key={c.slug} value={c.title}>{c.title}</option>
                 ))}
-                <option value="Construction Material Supply">Construction Material Supply</option>
+                <option value="Waterproofing Services">Waterproofing Services</option>
+                <option value="Epoxy Grout Work">Epoxy Grout Work</option>
+                <option value="Premix Work">Premix Work</option>
                 <option value="Other">Other</option>
               </select>
             </Field>
@@ -165,8 +165,8 @@ function ContactPage() {
           {/* Map */}
           <div className="lg:col-span-2 rounded-lg overflow-hidden border border-border min-h-[400px]">
             <iframe
-              title="Neehal Trade and Infra Location"
-              src="https://www.google.com/maps?q=Gandhidham,+Kutch,+Gujarat+370201&output=embed"
+              title="SJS Architecture Solutions Location"
+              src="https://www.google.com/maps?q=Motamava,+Rajkot,+Gujarat+360005&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0, minHeight: "400px" }}

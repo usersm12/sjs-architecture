@@ -30,7 +30,7 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
         <h3 className="font-display font-bold text-lg text-charcoal leading-tight">{product.name}</h3>
         <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{product.description}</p>
         <a
-          href={`mailto:neehaltrade@gmail.com?subject=Enquiry: ${encodeURIComponent(product.name)}`}
+          href={`mailto:rupeshgohel376@gmail.com?subject=Enquiry: ${encodeURIComponent(product.name)}`}
           className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand hover:text-brand-dark transition-colors"
         >
           Enquire →

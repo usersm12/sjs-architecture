@@ -5,19 +5,19 @@ import { PageHero } from "@/components/PageHero";
 import { CheckCircle2 } from "lucide-react";
 
 const reasons = [
-  { title: "Authorized Redwop Distributor", desc: "Genuine products, guaranteed quality." },
-  { title: "Wide Range", desc: "25+ construction chemical products always in stock." },
-  { title: "Local Expertise", desc: "Serving Gandhidham and Kutch region." },
-  { title: "Reliable Supply", desc: "On-time delivery to sites and contractors." },
+  { title: "Quality Products", desc: "We source high-quality construction chemicals for all types of projects." },
+  { title: "Professional Services", desc: "Expert on-site waterproofing, grouting, and premix application teams." },
+  { title: "Local Expertise", desc: "Serving Rajkot and surrounding areas with deep knowledge of local project needs." },
+  { title: "Complete Customer Satisfaction", desc: "We are committed to excellent workmanship and durable results on every project." },
 ];
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Neehal Trade and Infra | Redwop Distributor in Gandhidham" },
-      { name: "description", content: "Neehal Trade and Infra is an authorized distributor of Redwop Chemicals Pvt. Ltd. based in Gandhidham, Kutch — serving contractors and builders across the region." },
-      { property: "og:title", content: "About Neehal Trade and Infra" },
-      { property: "og:description", content: "Authorized Redwop distributor in Gandhidham, Kutch. Genuine products, local expertise, reliable supply." },
+      { title: "About — SJS Architecture Solutions | Construction Chemicals & Waterproofing Rajkot" },
+      { name: "description", content: "SJS Architecture Solutions is a trusted construction chemicals supplier and waterproofing service provider based in Rajkot, Gujarat." },
+      { property: "og:title", content: "About SJS Architecture Solutions" },
+      { property: "og:description", content: "Your complete partner for construction chemicals and waterproofing services in Rajkot." },
     ],
   }),
   component: AboutPage,
@@ -26,24 +26,24 @@ export const Route = createFileRoute("/about")({
 function AboutPage() {
   return (
     <Layout>
-      <PageHero title="About Neehal Trade and Infra" />
+      <PageHero title="About SJS Architecture Solutions" />
 
       <section className="container-tight py-16 md:py-20">
         <div className="grid gap-12 lg:grid-cols-3">
           <div className="lg:col-span-2 space-y-6">
             <span className="text-brand font-semibold uppercase text-xs tracking-wider">Who we are</span>
             <h2 className="font-display font-extrabold text-3xl md:text-4xl text-charcoal tracking-tight text-balance">
-              A trusted regional partner for construction chemicals
+              A trusted construction chemicals &amp; waterproofing partner in Rajkot
             </h2>
             <div className="space-y-5 text-muted-foreground leading-relaxed">
               <p>
-                <strong className="text-charcoal">Neehal Trade and Infra</strong> is an authorized distributor of Redwop Chemicals Pvt. Ltd., one of India's leading construction chemical manufacturers. Based in Gandhidham, Kutch, we serve contractors, builders, and infrastructure projects across the region with a complete range of construction chemicals and building materials.
+                <strong className="text-charcoal">SJS Architecture Solutions</strong> is a comprehensive supplier of all types of construction chemicals and building materials, based in Rajkot, Gujarat. We supply quality products for residential, commercial, and infrastructure projects across Rajkot and surrounding areas.
               </p>
               <p>
-                <strong className="text-charcoal">Redwop Chemicals Pvt. Ltd.</strong> is ISO 9001:2015 certified and has been in the business of construction chemicals for over five years, with a wide product range covering concrete admixtures, tile adhesives, waterproofing chemicals, curing compounds, epoxy grouts, industrial floor hardeners, and much more.
+                Beyond supply, we are also a professional <strong className="text-charcoal">Waterproofing Service Provider</strong> — offering on-site application of waterproofing systems, epoxy grout work, and premix solutions. Our team brings hands-on expertise directly to your site.
               </p>
               <p>
-                As an authorized distributor, we bring Redwop's proven products to local construction projects — with the added advantage of proximity, timely availability, and personal service.
+                Whether you need construction chemicals for a new build, waterproofing for a terrace or basement, or grouting solutions for a renovation project, SJS Architecture Solutions is your complete one-stop partner.
               </p>
             </div>
           </div>
@@ -53,17 +53,14 @@ function AboutPage() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="bg-muted rounded-2xl p-8 flex flex-col items-center justify-center border border-border"
+            className="bg-muted rounded-2xl p-8 flex flex-col items-center justify-center border border-border text-center"
           >
-            <span className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-4">Brand Partner</span>
-            <img
-              src="https://www.redwop.net/wp-content/uploads/2024/08/media_20241003_160242_8329776699937143088.png"
-              alt="Redwop Chemicals"
-              loading="lazy"
-              className="w-full max-w-[220px] h-auto"
-            />
-            <p className="text-center text-sm text-muted-foreground mt-5 font-medium">
-              ISO 9001:2015 Certified Manufacturer
+            <div className="h-16 w-16 rounded-full bg-brand/10 text-brand flex items-center justify-center mb-4">
+              <CheckCircle2 className="h-8 w-8" />
+            </div>
+            <h3 className="font-display font-extrabold text-2xl text-charcoal">Full Service</h3>
+            <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+              Supply + on-site application. We bring the chemicals and the expertise to your project.
             </p>
           </motion.div>
         </div>
@@ -73,16 +70,16 @@ function AboutPage() {
           <div className="bg-charcoal text-charcoal-foreground rounded-xl p-8 relative overflow-hidden">
             <div className="absolute inset-0 bg-grid opacity-20" />
             <div className="relative">
-              <span className="text-brand font-semibold uppercase text-xs tracking-wider">Mission</span>
+              <span className="text-brand font-semibold uppercase text-xs tracking-wider">Our Mission</span>
               <p className="mt-3 text-lg leading-relaxed">
-                To provide high-quality construction materials and chemical solutions with reliable service, ensuring customer satisfaction and contributing to strong and durable infrastructure.
+                To provide high-quality, reliable, and affordable all type of construction chemicals and waterproofing and grouting services with complete customer satisfaction. We are committed to delivering excellent workmanship, durable solutions, and professional service in nearby areas and surrounding locations.
               </p>
             </div>
           </div>
           <div className="bg-brand text-brand-foreground rounded-xl p-8">
-            <span className="font-semibold uppercase text-xs tracking-wider opacity-90">Vision</span>
+            <span className="font-semibold uppercase text-xs tracking-wider opacity-90">Our Vision</span>
             <p className="mt-3 text-lg leading-relaxed">
-              To become a trusted and leading supplier in the construction industry by delivering innovative solutions, expanding our network, and building long-term relationships with clients and partners.
+              To become a trusted name in the construction and waterproofing industry by consistently providing excellent services and long-lasting results. We aim to expand our reach while maintaining product quality, service, trust, and strong customer relationships in every project we undertake.
             </p>
           </div>
         </div>
@@ -94,7 +91,7 @@ function AboutPage() {
           <div className="max-w-2xl mb-10">
             <span className="text-brand font-semibold uppercase text-xs tracking-wider">Why choose us</span>
             <h2 className="font-display font-extrabold text-3xl md:text-4xl text-charcoal mt-3 tracking-tight">
-              Built on trust, delivered on time
+              Built on quality, delivered with care
             </h2>
           </div>
           <div className="grid gap-6 sm:grid-cols-2">

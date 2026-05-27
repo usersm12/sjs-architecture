@@ -12,7 +12,6 @@ export type ProductCategory = {
 };
 
 const P = "/images/products";
-const RW = "https://www.redwop.net/wp-content/uploads";
 
 export const productCategories: ProductCategory[] = [
   {
@@ -85,9 +84,20 @@ export const productCategories: ProductCategory[] = [
     ],
   },
   {
+    title: "Building Materials",
+    slug: "building-materials",
+    intro: "Essential building materials and allied products for complete construction needs.",
+    products: [
+      { name: "FRP Manhole", description: "Fibre-reinforced plastic manholes — lightweight, corrosion-resistant, and durable for drainage and utility applications." },
+      { name: "Water Tank", description: "High-quality water storage tanks for residential, commercial, and industrial projects." },
+      { name: "Precer", description: "Precast construction elements for fast, reliable, and quality building work." },
+      { name: "White Cement", description: "Premium white cement for decorative plasterwork, tile jointing, and aesthetic finishing." },
+    ],
+  },
+  {
     title: "Others",
     slug: "others",
-    intro: "Allied construction materials we supply alongside our Redwop chemical range.",
+    intro: "Allied construction materials to complement our chemical range.",
     products: [
       { name: "Bitumen Membrane and Butyl Tape", description: "Self-adhesive aluminium-faced tape for sealing joints, flashings and leaks.", image: `${P}/BITUFLASH-2MM.png` },
       { name: "Fiber Recrones", description: "Polypropylene micro fibres for crack control and shrinkage resistance in concrete.", image: `${P}/Fiber-Resa.jpg` },

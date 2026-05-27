@@ -7,10 +7,10 @@ import { productCategories } from "@/data/products";
 export const Route = createFileRoute("/products")({
   head: () => ({
     meta: [
-      { title: "Products — Neehal Trade and Infra | Redwop Chemicals Distributor" },
-      { name: "description", content: "Complete range of Redwop construction chemicals: concrete admixtures, waterproofing, tile adhesives, repair mortars, coatings and flooring solutions." },
-      { property: "og:title", content: "Our Products — Neehal Trade and Infra" },
-      { property: "og:description", content: "From concrete admixtures to waterproofing — every Redwop chemical you need, in stock in Gandhidham." },
+      { title: "Products — SJS Architecture Solutions | Construction Chemicals Rajkot" },
+      { name: "description", content: "Complete range of construction chemicals: concrete admixtures, waterproofing, tile adhesives, repair mortars, coatings, flooring, and building materials." },
+      { property: "og:title", content: "Our Products — SJS Architecture Solutions" },
+      { property: "og:description", content: "From concrete admixtures to waterproofing — every construction chemical you need, in stock in Rajkot." },
     ],
   }),
   component: ProductsPage,
@@ -21,7 +21,7 @@ function ProductsPage() {
     <Layout>
       <PageHero
         title="Our Products"
-        subtitle="We stock the complete range of Redwop construction chemicals — from concrete to waterproofing, flooring to coatings."
+        subtitle="We stock a complete range of construction chemicals and building materials — from concrete to waterproofing, flooring to coatings."
       />
 
       <div className="container-tight py-16 md:py-20 space-y-20">
