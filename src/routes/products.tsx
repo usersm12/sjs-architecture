@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Layout } from "@/components/Layout";
 import { productCategories } from "@/data/products";
-import { Mail, Box, Phone, ArrowRight, Search } from "lucide-react";
+import { Mail, Box, Phone, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const Route = createFileRoute("/products")({
@@ -38,7 +38,7 @@ function ProductsPage() {
       </section>
 
       {/* Category navigation */}
-      <section className="bg-white border-b border-border sticky top-[68px] md:top-[72px] z-40 overflow-x-auto">
+      <section className="bg-white border-b border-border sticky top-[68px] md:top-[104px] z-40 overflow-x-auto">
         <div className="container-tight">
           <nav className="flex gap-1 py-3 min-w-max">
             <Link
@@ -62,7 +62,7 @@ function ProductsPage() {
 
       <main className="container-tight py-12 md:py-16 mb-[72px] lg:mb-0">
         {productCategories.map((category, catIndex) => (
-          <section key={category.slug} id={category.slug} className="mb-16 last:mb-0 scroll-mt-40">
+          <section key={category.slug} id={category.slug} className="mb-16 last:mb-0 scroll-mt-[160px] md:scroll-mt-[180px]">
             {/* Category header */}
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
               <div>

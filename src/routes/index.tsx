@@ -8,20 +8,18 @@ import {
   Package,
   Droplets,
   Layers,
-  Hammer,
-  ClipboardList,
   MapPin,
   Mail,
   Clock,
   Users,
-  Truck,
 } from "lucide-react";
 import { productCategories } from "@/data/products";
 
-// Indian construction site photos from Pexels
+// Construction site photos from Pexels
 const heroImg = "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80";
-const waterproofingImg = "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=800&q=80";
-const constructionWorkImg = "https://images.pexels.com/photos/1545525/pexels-photo-1545525.jpeg?auto=compress&cs=tinysrgb&w=800&q=80";
+const chemicalsImg = "https://images.pexels.com/photos/1463917/pexels-photo-1463917.jpeg?auto=compress&cs=tinysrgb&w=800&q=80";
+const waterproofingImg = "https://images.pexels.com/photos/209251/pexels-photo-209251.jpeg?auto=compress&cs=tinysrgb&w=800&q=80";
+const tilingImg = "https://images.pexels.com/photos/271667/pexels-photo-271667.jpeg?auto=compress&cs=tinysrgb&w=800&q=80";
 const buildingSiteImg = "https://images.pexels.com/photos/2760241/pexels-photo-2760241.jpeg?auto=compress&cs=tinysrgb&w=800&q=80";
 
 const trustItems = [
@@ -166,8 +164,20 @@ function HomePage() {
                   to="/products"
                   className="group flex flex-col bg-white border border-border hover:border-[#CC0000] hover:shadow-lg transition-all overflow-hidden h-full"
                 >
-                  <div className="aspect-square bg-gradient-to-br from-[#CC0000]/10 to-[#CC0000]/5 overflow-hidden flex items-center justify-center border-b border-border group-hover:from-[#CC0000]/20 group-hover:to-[#CC0000]/10 transition-colors">
-                    <Package className="h-16 w-16 text-[#CC0000]/30 group-hover:text-[#CC0000]/50 transition-colors" />
+                  <div className="aspect-square bg-[#fafafa] overflow-hidden flex items-center justify-center border-b border-border">
+                    {product.image ? (
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        loading="lazy"
+                        className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                      />
+                    ) : (
+                      <div className="flex flex-col items-center justify-center text-center p-6">
+                        <Package className="h-12 w-12 text-[#CC0000]/25 mb-2" />
+                        <span className="text-xs text-muted-foreground leading-tight">{product.name}</span>
+                      </div>
+                    )}
                   </div>
                   <div className="p-4 flex flex-col flex-1">
                     <p className="font-sans text-[10px] font-semibold uppercase tracking-wider text-muted-foreground mb-1">
@@ -212,7 +222,7 @@ function HomePage() {
                 Icon: Package,
                 title: "Construction Chemicals Supply",
                 desc: "Complete range of admixtures, waterproofing, tile adhesives, coatings, grouts and more.",
-                image: constructionWorkImg,
+                image: chemicalsImg,
               },
               {
                 Icon: Droplets,
@@ -224,7 +234,7 @@ function HomePage() {
                 Icon: Layers,
                 title: "Epoxy Grout Work",
                 desc: "Stain-resistant, durable epoxy grouting for tiles, industrial floors and high-traffic areas.",
-                image: buildingSiteImg,
+                image: tilingImg,
               },
             ].map(({ Icon, title, desc, image }, i) => (
               <motion.div
@@ -295,8 +305,8 @@ function HomePage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                src={constructionWorkImg}
-                alt="Indian construction site"
+                src={chemicalsImg}
+                alt="Construction site"
                 className="aspect-[3/4] object-cover mt-8"
               />
             </div>
