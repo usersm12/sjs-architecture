@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
+import logoWhite from "@/assets/sjs_logo_white.png";
 
 const productLinks = [
   "Concrete Admixtures",
@@ -53,21 +54,11 @@ export function Footer() {
       <div className="container-tight py-16 grid gap-10 md:grid-cols-4">
         {/* Brand */}
         <div className="md:col-span-1">
-          <div className="flex items-center gap-2.5 mb-5">
-            <img
-              src="/images/image.png"
-              alt="SJS Architecture Solutions"
-              className="h-12 w-auto object-contain"
-            />
-            <div className="flex flex-col leading-none">
-              <span className="font-sans font-bold text-[11px] tracking-tight text-white">
-                SJS ARCHITECTURE SOLUTIONS
-              </span>
-              <span className="text-[#CC0000] font-semibold text-[9px] uppercase tracking-widest mt-1">
-                Construction Chemicals
-              </span>
-            </div>
-          </div>
+          <img
+            src={logoWhite}
+            alt="SJS Architecture Solutions"
+            className="h-20 w-auto object-contain mb-5"
+          />
           <p className="text-sm text-white/50 leading-relaxed">
             Your complete partner for construction chemicals, waterproofing services, and building materials in Rajkot, Gujarat.
           </p>

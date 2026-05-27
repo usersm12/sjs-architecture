@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
+import logoRed from "@/assets/sjs_logo_red.png";
 
 const navItems = [
   { to: "/", label: "Home" },
@@ -43,20 +44,12 @@ export function Header() {
       {/* Main header */}
       <div className="container-tight flex items-center justify-between h-[68px]">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2.5 shrink-0">
+        <Link to="/" className="flex items-center gap-2.5 shrink-0 group">
           <img
-            src="/images/image.png"
+            src={logoRed}
             alt="SJS Architecture Solutions"
-            className="h-10 w-auto object-contain"
+            className="h-14 w-auto object-contain"
           />
-          <div className="flex flex-col leading-none hidden sm:flex">
-            <span className="font-sans font-bold text-[12px] tracking-tight text-[#111111]">
-              SJS ARCHITECTURE SOLUTIONS
-            </span>
-            <span className="text-[9px] font-semibold text-[#CC0000] uppercase tracking-widest mt-0.5">
-              Construction Chemicals
-            </span>
-          </div>
         </Link>
 
         {/* Nav — desktop */}
