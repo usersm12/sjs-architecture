@@ -145,7 +145,7 @@ function HomePage() {
               <img
                 src="/images/redwop-logo-white.png"
                 alt="Redwop"
-                className="h-9 w-auto object-contain opacity-90"
+                className="h-14 w-auto object-contain opacity-90"
               />
               <span className="h-6 w-px bg-white/20" />
               <span className="font-sans text-xs font-bold uppercase tracking-widest text-white/60">
@@ -153,7 +153,7 @@ function HomePage() {
               </span>
             </div>
 
-            <h1 className="font-display font-extrabold text-3xl sm:text-4xl md:text-[2.6rem] text-white leading-[1.12] text-balance mb-6">
+            <h1 className="font-display font-extrabold text-2xl sm:text-3xl md:text-[2rem] text-white leading-[1.15] text-balance mb-6">
               Rajkot's Trusted Source for{" "}
               <span className="text-[#CC0000]">Construction Chemicals</span>{" "}
               & Waterproofing
