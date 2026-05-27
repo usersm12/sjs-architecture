@@ -51,8 +51,8 @@ export function Header() {
             className="h-12 w-auto object-contain"
           />
           <div className="flex flex-col leading-none hidden sm:block">
-            <span className="font-display font-bold text-sm text-[#111111]">SJS</span>
-            <span className="font-sans text-[10px] font-semibold text-[#CC0000] uppercase tracking-wider">Chemicals</span>
+            <span className="font-display font-bold text-[11px] tracking-tight text-[#111111]">SJS ARCHITECTURE</span>
+            <span className="font-sans text-[9px] font-semibold text-[#CC0000] uppercase tracking-widest">Solutions</span>
           </div>
         </Link>
 

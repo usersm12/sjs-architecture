@@ -166,17 +166,8 @@ function HomePage() {
                   to="/products"
                   className="group flex flex-col bg-white border border-border hover:border-[#CC0000] hover:shadow-lg transition-all overflow-hidden h-full"
                 >
-                  <div className="aspect-square bg-[#f5f5f5] overflow-hidden flex items-center justify-center border-b border-border">
-                    {product.image ? (
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        loading="lazy"
-                        className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
-                      />
-                    ) : (
-                      <Package className="h-12 w-12 text-muted-foreground/30" />
-                    )}
+                  <div className="aspect-square bg-gradient-to-br from-[#CC0000]/10 to-[#CC0000]/5 overflow-hidden flex items-center justify-center border-b border-border group-hover:from-[#CC0000]/20 group-hover:to-[#CC0000]/10 transition-colors">
+                    <Package className="h-16 w-16 text-[#CC0000]/30 group-hover:text-[#CC0000]/50 transition-colors" />
                   </div>
                   <div className="p-4 flex flex-col flex-1">
                     <p className="font-sans text-[10px] font-semibold uppercase tracking-wider text-muted-foreground mb-1">
