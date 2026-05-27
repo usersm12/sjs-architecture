@@ -304,7 +304,7 @@ export const services: ServiceData[] = [
     heroDescription: "On-site premix mortar application for plastering, block laying, tile fixing, and floor screeding — delivering uniform quality and faster project timelines.",
     category: "Application Services",
     icon: "ClipboardList",
-    heroImage: "https://images.pexels.com/photos/1463917/pexels-photo-1463917.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    heroImage: "https://images.pexels.com/photos/1370704/pexels-photo-1370704.jpeg?auto=compress&cs=tinysrgb&w=1400",
     keyStats: [
       { value: "30%", label: "Faster Than Site Mix" },
       { value: "Zero", label: "Batch Variation" },

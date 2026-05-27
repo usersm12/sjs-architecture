@@ -21,35 +21,6 @@ const serviceLinks = [
 export function Footer() {
   return (
     <footer className="bg-[#111111] text-white">
-      {/* CTA strip */}
-      <div className="bg-[#CC0000]">
-        <div className="container-tight py-10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <p className="font-sans text-xs font-bold uppercase tracking-widest text-white/70 mb-1">
-              Ready to get started?
-            </p>
-            <h3 className="font-display font-bold text-2xl md:text-3xl text-white">
-              Talk to our construction chemicals experts
-            </h3>
-          </div>
-          <div className="flex flex-wrap gap-3 shrink-0">
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 bg-white text-[#CC0000] px-6 py-3 text-sm font-bold uppercase tracking-wide hover:bg-white/90 transition-colors"
-            >
-              Get a Quote <ArrowRight className="h-4 w-4" />
-            </Link>
-            <a
-              href="tel:+918530081327"
-              className="inline-flex items-center gap-2 border-2 border-white/40 text-white px-6 py-3 text-sm font-bold uppercase tracking-wide hover:border-white transition-colors"
-            >
-              <Phone className="h-4 w-4" />
-              Call Now
-            </a>
-          </div>
-        </div>
-      </div>
-
       {/* Main footer body */}
       <div className="container-tight py-16 grid gap-10 md:grid-cols-4">
         {/* Brand */}
