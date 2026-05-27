@@ -2,29 +2,88 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Layout } from "@/components/Layout";
 import { ProductSlider } from "@/components/ProductSlider";
-import { Award, Package, Wrench, ArrowRight, Droplets, Hammer, ClipboardList, CheckCircle2, MapPin, ShieldCheck, Truck } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Droplets,
+  Layers,
+  Package,
+  Hammer,
+  ClipboardList,
+  CheckCircle2,
+  MapPin,
+  Phone,
+} from "lucide-react";
 import heroImg from "@/assets/hero-construction.jpg";
 
-const trustBadges = [
-  { Icon: Package, title: "Complete Chemical Range", desc: "Concrete admixtures, waterproofing, tile adhesives, coatings, grouts and more." },
-  { Icon: Droplets, title: "Waterproofing Experts", desc: "Professional on-site waterproofing services for terraces, roofs and basements." },
-  { Icon: Wrench, title: "Epoxy & Grouting Services", desc: "Expert epoxy grout work and premix application on your site." },
+const stats = [
+  { value: "50+", label: "Products in Stock" },
+  { value: "5", label: "Service Types" },
+  { value: "100%", label: "Satisfaction Goal" },
+  { value: "Rajkot", label: "Gujarat, India" },
 ];
 
 const services = [
-  { Icon: Package, title: "Construction Chemicals Supply", desc: "Complete range of high-quality construction chemicals for all types of residential and commercial projects." },
-  { Icon: Droplets, title: "Waterproofing Services", desc: "Professional waterproofing solutions for terraces, roofs, basements, and wet areas — applied by our skilled team." },
-  { Icon: Hammer, title: "Epoxy Grout Work", desc: "Expert epoxy grouting for tiles, joints, and industrial floors ensuring long-lasting, stain-resistant results." },
-  { Icon: ClipboardList, title: "Premix Work", desc: "On-site premix mortar application services for smooth, consistent, and durable finishes." },
+  {
+    num: "01",
+    Icon: Package,
+    title: "Construction Chemicals Supply",
+    desc: "Complete range of high-quality construction chemicals — admixtures, waterproofing, tile adhesives, coatings, grouts and more.",
+  },
+  {
+    num: "02",
+    Icon: Droplets,
+    title: "Waterproofing Services",
+    desc: "Professional on-site waterproofing for terraces, roofs, basements and wet areas using proven systems applied by our trained team.",
+  },
+  {
+    num: "03",
+    Icon: Layers,
+    title: "Epoxy Grout Work",
+    desc: "Expert epoxy grouting for tile joints, industrial floors and high-traffic areas — stain-resistant, durable, and long-lasting.",
+  },
+  {
+    num: "04",
+    Icon: ClipboardList,
+    title: "Premix Work",
+    desc: "On-site premix mortar application for plastering, block laying, tile fixing and floor screeding with consistent quality.",
+  },
+];
+
+const process = [
+  {
+    step: "01",
+    title: "Contact Us",
+    desc: "Tell us your project requirement — product needed, site location, and timeline.",
+  },
+  {
+    step: "02",
+    title: "We Recommend",
+    desc: "Our team recommends the right chemicals and application method for your specific project.",
+  },
+  {
+    step: "03",
+    title: "Supply & Apply",
+    desc: "We supply quality products and our service team applies them directly on your site.",
+  },
+];
+
+const whyUs = [
+  "High-quality, reliable products for all project types",
+  "Professional on-site application services",
+  "Serving Rajkot and surrounding areas",
+  "Complete customer satisfaction commitment",
+  "Expert guidance on product selection",
+  "Timely supply and service delivery",
 ];
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "SJS Architecture Solutions — Construction Chemicals & Waterproofing in Rajkot" },
-      { name: "description", content: "SJS Architecture Solutions — your complete partner for construction chemicals, waterproofing services, epoxy grout work, and building materials in Rajkot, Gujarat." },
-      { property: "og:title", content: "SJS Architecture Solutions — Construction Chemicals & Waterproofing" },
-      { property: "og:description", content: "High-quality construction chemicals and professional waterproofing services in Rajkot, Gujarat." },
+      { title: "SJS Architecture Solutions — Construction Chemicals & Waterproofing, Rajkot" },
+      { name: "description", content: "SJS Architecture Solutions — construction chemicals supply, waterproofing services, epoxy grouting and premix work in Rajkot, Gujarat." },
+      { property: "og:title", content: "SJS Architecture Solutions" },
+      { property: "og:description", content: "Construction chemicals and waterproofing services in Rajkot, Gujarat." },
     ],
   }),
   component: HomePage,
@@ -33,247 +92,375 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   return (
     <Layout>
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-charcoal text-charcoal-foreground">
+
+      {/* ─── HERO ──────────────────────────────────────────────────── */}
+      <section className="relative min-h-screen flex flex-col bg-charcoal">
         <img
           src={heroImg}
           alt=""
-          width={1920}
-          height={1080}
-          className="absolute inset-0 w-full h-full object-cover opacity-50"
+          className="absolute inset-0 w-full h-full object-cover opacity-35 select-none"
         />
         <div className="absolute inset-0 hero-overlay" />
-        <div className="absolute inset-0 bg-grid opacity-30" />
+        <div className="absolute inset-0 bg-grid opacity-25" />
 
-        <div className="container-tight relative py-24 md:py-40">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="max-w-3xl"
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand/50 bg-brand/15 text-white text-xs font-semibold uppercase tracking-wider mb-6">
-              <span className="h-1.5 w-1.5 rounded-full bg-brand animate-pulse" />
-              Rajkot · Gujarat · India
-            </div>
-            <h1 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.05] text-balance">
-              Your Complete Construction Chemicals &amp; Waterproofing Partner
-            </h1>
-            <p className="mt-6 text-lg md:text-xl text-white/75 max-w-2xl leading-relaxed">
-              High-quality construction chemicals, professional <span className="text-brand font-semibold">waterproofing services</span>, epoxy grout work, and building materials — all under one roof in Rajkot.
-            </p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Link
-                to="/products"
-                className="inline-flex items-center gap-2 bg-brand hover:bg-brand-dark text-brand-foreground px-6 py-3.5 rounded-md font-semibold transition-all shadow-elegant"
-              >
-                Explore Products
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                to="/services"
-                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur border border-white/30 text-white px-6 py-3.5 rounded-md font-semibold transition-all"
-              >
-                Our Services
-              </Link>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur border border-white/30 text-white px-6 py-3.5 rounded-md font-semibold transition-all"
-              >
-                Contact Us
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* TRUST BADGES */}
-      <section className="bg-muted/50 border-y border-border">
-        <div className="container-tight py-12 grid gap-6 md:grid-cols-3">
-          {trustBadges.map(({ Icon, title, desc }, i) => (
+        {/* Main content — vertically centered */}
+        <div className="relative flex-1 flex items-center">
+          <div className="container-tight w-full py-32 md:py-40">
             <motion.div
-              key={title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="flex items-start gap-4"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="max-w-4xl"
             >
-              <div className="shrink-0 h-12 w-12 rounded-md bg-brand/10 text-brand flex items-center justify-center">
-                <Icon className="h-6 w-6" />
-              </div>
-              <div>
-                <h3 className="font-display font-bold text-lg text-charcoal">{title}</h3>
-                <p className="text-sm text-muted-foreground mt-1">{desc}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* PRODUCT CATEGORIES */}
-      <section className="py-20 md:py-28">
-        <div className="container-tight">
-          <div className="max-w-2xl mb-12">
-            <span className="text-brand font-semibold uppercase text-xs tracking-wider">What we supply</span>
-            <h2 className="font-display font-extrabold text-3xl md:text-5xl text-charcoal mt-3 tracking-tight text-balance">
-              The complete range of construction chemicals
-            </h2>
-            <p className="mt-4 text-muted-foreground text-lg">
-              From foundation to finish — every chemical you need for concrete, waterproofing, tiling, repair, and flooring.
-            </p>
-          </div>
-          <ProductSlider />
-        </div>
-      </section>
-
-      {/* ABOUT SECTION */}
-      <section className="bg-muted/40 py-20 md:py-28 border-y border-border">
-        <div className="container-tight">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="text-brand font-semibold uppercase text-xs tracking-wider">About us</span>
-              <h2 className="font-display font-extrabold text-3xl md:text-5xl text-charcoal mt-3 tracking-tight text-balance">
-                A trusted name for construction chemicals in Rajkot
-              </h2>
-              <p className="mt-5 text-muted-foreground text-lg leading-relaxed">
-                <strong className="text-charcoal">SJS Architecture Solutions</strong> is your one-stop destination for all types of construction chemicals and building materials in Rajkot, Gujarat. We supply high-quality products and also offer professional on-site services including waterproofing, epoxy grouting, and premix application.
-              </p>
-              <p className="mt-4 text-muted-foreground leading-relaxed">
-                We are committed to delivering excellent workmanship, durable solutions, and complete customer satisfaction on every project — big or small.
+              <p className="text-brand font-semibold uppercase tracking-[0.25em] text-xs sm:text-sm mb-6">
+                Rajkot · Gujarat · India
               </p>
 
-              <div className="mt-8 grid sm:grid-cols-2 gap-4">
-                {[
-                  { Icon: ShieldCheck, text: "High-quality, reliable products" },
-                  { Icon: CheckCircle2, text: "Complete chemical range" },
-                  { Icon: MapPin, text: "Based in Rajkot, Gujarat" },
-                  { Icon: Truck, text: "On-site service available" },
-                ].map(({ Icon, text }) => (
-                  <div key={text} className="flex items-center gap-3">
-                    <div className="shrink-0 h-9 w-9 rounded-md bg-brand/10 text-brand flex items-center justify-center">
-                      <Icon className="h-4 w-4" />
-                    </div>
-                    <span className="text-sm font-semibold text-charcoal">{text}</span>
-                  </div>
-                ))}
-              </div>
+              <h1 className="font-display font-black text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem] text-white leading-[0.92] tracking-tight">
+                CONSTRUCTION
+                <br />
+                <span className="text-brand">CHEMICALS</span>
+                <br />
+                &amp; WATERPROOFING
+              </h1>
 
-              <div className="mt-9 flex flex-wrap gap-3">
+              <p className="mt-8 text-lg md:text-xl text-white/60 max-w-xl leading-relaxed font-light">
+                High-quality chemicals and professional on-site waterproofing, epoxy grouting &amp; premix services — one trusted partner in Rajkot.
+              </p>
+
+              <div className="mt-10 flex flex-wrap gap-4">
                 <Link
-                  to="/about"
-                  className="inline-flex items-center gap-2 bg-charcoal hover:bg-black text-white px-6 py-3 rounded-md font-semibold transition-all"
+                  to="/products"
+                  className="inline-flex items-center gap-2 bg-brand hover:bg-brand-dark text-white px-8 py-4 font-bold text-sm uppercase tracking-wider transition-all"
                 >
-                  More about us
+                  Explore Products
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
-                  to="/products"
-                  className="inline-flex items-center gap-2 bg-white hover:bg-muted border border-border text-charcoal px-6 py-3 rounded-md font-semibold transition-all"
+                  to="/services"
+                  className="inline-flex items-center gap-2 border border-white/25 hover:border-white/60 text-white px-8 py-4 font-bold text-sm uppercase tracking-wider transition-all"
                 >
-                  View Products
+                  Our Services
                 </Link>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="relative"
-            >
-              <div className="aspect-[4/5] rounded-lg overflow-hidden shadow-elegant border border-border bg-muted">
-                <img
-                  src={heroImg}
-                  alt="Construction site"
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="absolute -bottom-6 -left-6 hidden md:flex bg-brand text-brand-foreground px-6 py-5 rounded-lg shadow-elegant max-w-[16rem]">
-                <div>
-                  <div className="font-display font-extrabold text-3xl leading-none">100%</div>
-                  <div className="text-xs uppercase tracking-wider mt-2 opacity-90">Customer satisfaction commitment</div>
-                </div>
-              </div>
-              <div className="absolute -top-6 -right-6 hidden md:flex bg-white border border-border px-5 py-4 rounded-lg shadow-elegant items-center gap-3">
-                <Award className="h-7 w-7 text-brand" />
-                <div>
-                  <div className="font-display font-bold text-charcoal text-sm leading-tight">Quality Assured</div>
-                  <div className="text-xs text-muted-foreground">Construction Chemicals</div>
-                </div>
+                <a
+                  href="tel:+918530081327"
+                  className="inline-flex items-center gap-2 border border-white/25 hover:border-brand hover:text-brand text-white px-8 py-4 font-bold text-sm uppercase tracking-wider transition-all"
+                >
+                  <Phone className="h-4 w-4" />
+                  Call Now
+                </a>
               </div>
             </motion.div>
           </div>
         </div>
+
+        {/* Stats bar anchored at bottom */}
+        <div className="relative border-t border-white/10 bg-black/40 backdrop-blur-sm">
+          <div className="container-tight grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
+            {stats.map(({ value, label }, i) => (
+              <motion.div
+                key={label}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.6 + i * 0.1 }}
+                className="py-6 px-4 md:px-8 text-center"
+              >
+                <div className="font-display font-black text-2xl md:text-3xl text-brand">{value}</div>
+                <div className="text-white/50 text-xs uppercase tracking-wider mt-1 font-medium">{label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </section>
 
-      {/* SERVICES STRIP */}
-      <section className="bg-charcoal text-charcoal-foreground py-20 md:py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid opacity-30" />
+      {/* ─── MARQUEE ──────────────────────────────────────────────── */}
+      <div className="bg-brand overflow-hidden py-4 border-b-2 border-brand-dark">
+        <div className="marquee">
+          <div className="marquee-track">
+            {[...Array(2)].map((_, pass) =>
+              ["CONSTRUCTION CHEMICALS", "WATERPROOFING SERVICES", "EPOXY GROUT WORK", "PREMIX WORK", "TILE ADHESIVES", "CONCRETE ADMIXTURES", "REPAIR SOLUTIONS", "FRP MANHOLES", "BUILDING MATERIALS"].map((item) => (
+                <span key={`${pass}-${item}`} className="inline-flex items-center gap-5 px-8 text-white font-bold text-sm uppercase tracking-[0.2em] whitespace-nowrap">
+                  <span className="h-1.5 w-1.5 rounded-full bg-white/40 shrink-0" />
+                  {item}
+                </span>
+              ))
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* ─── SERVICES ─────────────────────────────────────────────── */}
+      <section className="bg-charcoal py-24 md:py-36 relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid opacity-20" />
         <div className="container-tight relative">
-          <div className="max-w-2xl mb-12">
-            <span className="text-brand font-semibold uppercase text-xs tracking-wider">Our services</span>
-            <h2 className="font-display font-extrabold text-3xl md:text-5xl mt-3 tracking-tight text-balance">
-              Supply &amp; on-site expertise
-            </h2>
-            <p className="mt-4 text-white/65 text-lg">
-              We don't just supply chemicals — we apply them too. From waterproofing to epoxy grouting, our team works on your site.
-            </p>
+
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
+            <div>
+              <span className="section-num">01 — Services</span>
+              <h2 className="font-display font-black text-4xl md:text-6xl text-white mt-3 tracking-tight leading-tight">
+                WHAT WE DO
+              </h2>
+              <p className="mt-4 text-white/50 text-lg max-w-md">
+                We supply and apply — everything your construction project needs.
+              </p>
+            </div>
+            <Link
+              to="/services"
+              className="self-start md:self-auto inline-flex items-center gap-2 border border-white/20 hover:border-brand text-white hover:text-brand px-6 py-3 text-sm font-bold uppercase tracking-wider transition-all"
+            >
+              All Services <ArrowUpRight className="h-4 w-4" />
+            </Link>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {services.map(({ Icon, title, desc }, i) => (
+          {/* 2×2 grid with gap lines */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10">
+            {services.map(({ num, Icon, title, desc }, i) => (
               <motion.div
                 key={title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="bg-white/5 border border-white/10 rounded-lg p-6 hover:bg-white/10 hover:border-brand/40 transition-all"
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="bg-charcoal p-8 md:p-10 hover:bg-white/5 transition-colors group"
               >
-                <div className="h-12 w-12 rounded-md bg-brand text-brand-foreground flex items-center justify-center mb-5">
-                  <Icon className="h-6 w-6" />
+                <span className="font-display font-black text-5xl text-brand/20 group-hover:text-brand/40 transition-colors leading-none">
+                  {num}
+                </span>
+                <div className="h-12 w-12 bg-brand flex items-center justify-center mt-6 mb-5">
+                  <Icon className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="font-display font-bold text-lg mb-2">{title}</h3>
-                <p className="text-white/70 text-sm leading-relaxed">{desc}</p>
+                <h3 className="font-display font-bold text-xl md:text-2xl text-white leading-tight">{title}</h3>
+                <p className="mt-3 text-white/55 text-sm leading-relaxed">{desc}</p>
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="mt-10">
-            <Link
-              to="/services"
-              className="inline-flex items-center gap-2 bg-brand hover:bg-brand-dark text-brand-foreground px-6 py-3 rounded-md font-semibold transition-all"
-            >
-              View All Services
-              <ArrowRight className="h-4 w-4" />
-            </Link>
+      {/* ─── STATS ─────────────────────────────────────────────────── */}
+      <section className="border-y border-border bg-white">
+        <div className="container-tight py-16 md:py-20">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 md:gap-0 md:divide-x divide-border">
+            {[
+              { value: "50+", label: "Products in Stock", sub: "Full chemical range" },
+              { value: "5", label: "Service Types", sub: "Supply + on-site" },
+              { value: "100%", label: "Satisfaction Goal", sub: "Every project" },
+              { value: "Rajkot", label: "Gujarat, India", sub: "Local experts" },
+            ].map(({ value, label, sub }, i) => (
+              <motion.div
+                key={label}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                className="text-center md:px-10"
+              >
+                <div className="font-display font-black text-5xl md:text-6xl text-brand leading-none">{value}</div>
+                <div className="font-display font-bold text-charcoal text-sm mt-3 uppercase tracking-wider">{label}</div>
+                <div className="text-muted-foreground text-xs mt-1">{sub}</div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA BANNER */}
-      <section className="bg-brand text-brand-foreground">
-        <div className="container-tight py-16 md:py-20 flex flex-col md:flex-row items-center gap-6 md:gap-10 justify-between">
-          <h2 className="font-display font-extrabold text-2xl md:text-4xl tracking-tight max-w-2xl text-balance">
-            Need construction chemicals or waterproofing services in Rajkot? We've got you covered.
-          </h2>
-          <Link
-            to="/contact"
-            className="shrink-0 inline-flex items-center gap-2 bg-charcoal hover:bg-black text-white px-7 py-4 rounded-md font-semibold transition-all"
-          >
-            Get in Touch
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+      {/* ─── PRODUCTS ─────────────────────────────────────────────── */}
+      <section className="py-24 md:py-36 bg-muted/30">
+        <div className="container-tight">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-14 gap-6">
+            <div>
+              <span className="section-num">02 — Products</span>
+              <h2 className="font-display font-black text-4xl md:text-6xl text-charcoal mt-3 tracking-tight leading-tight">
+                WHAT WE SUPPLY
+              </h2>
+              <p className="mt-4 text-muted-foreground text-lg max-w-xl">
+                From foundation to finish — concrete admixtures, waterproofing, tile adhesives, repair mortars, coatings and building materials.
+              </p>
+            </div>
+            <Link
+              to="/products"
+              className="self-start md:self-auto inline-flex items-center gap-2 border border-charcoal/20 hover:border-brand text-charcoal hover:text-brand px-6 py-3 text-sm font-bold uppercase tracking-wider transition-all"
+            >
+              All Products <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          </div>
+
+          <ProductSlider />
         </div>
       </section>
+
+      {/* ─── ABOUT ────────────────────────────────────────────────── */}
+      <section className="py-24 md:py-36 border-t border-border overflow-hidden">
+        <div className="container-tight">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+
+            {/* Image column */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.7 }}
+              className="lg:col-span-5 relative"
+            >
+              <div className="aspect-[4/5] overflow-hidden bg-muted">
+                <img
+                  src={heroImg}
+                  alt="SJS Architecture Solutions"
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              {/* Floating stat */}
+              <div className="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 bg-brand text-white p-6 md:p-8 max-w-[180px] md:max-w-[210px]">
+                <div className="font-display font-black text-4xl md:text-5xl leading-none">100%</div>
+                <div className="text-xs md:text-sm mt-2 text-white/80 leading-tight">Commitment to customer satisfaction</div>
+              </div>
+            </motion.div>
+
+            {/* Content column */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="lg:col-span-7"
+            >
+              <span className="section-num">03 — About Us</span>
+              <h2 className="font-display font-black text-4xl md:text-5xl text-charcoal mt-3 tracking-tight leading-tight text-balance">
+                YOUR COMPLETE CONSTRUCTION PARTNER
+              </h2>
+
+              <div className="mt-8 pl-5 border-l-4 border-brand">
+                <p className="text-lg text-charcoal/75 italic leading-relaxed">
+                  "Our mission is to provide high-quality, reliable, and affordable construction chemicals and waterproofing services with complete customer satisfaction."
+                </p>
+              </div>
+
+              <p className="mt-6 text-muted-foreground leading-relaxed">
+                <strong className="text-charcoal">SJS Architecture Solutions</strong> is based in Rajkot, Gujarat — supplying all types of construction chemicals and building materials while also offering professional on-site services including waterproofing, epoxy grouting, and premix application.
+              </p>
+
+              <div className="mt-8 grid sm:grid-cols-2 gap-3">
+                {whyUs.map((point) => (
+                  <div key={point} className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-brand shrink-0 mt-0.5" />
+                    <span className="text-sm text-charcoal/80">{point}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-10 flex flex-wrap gap-4">
+                <Link
+                  to="/about"
+                  className="inline-flex items-center gap-2 bg-charcoal hover:bg-black text-white px-7 py-4 font-bold text-sm uppercase tracking-wider transition-all"
+                >
+                  About Us <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 border border-charcoal/20 hover:border-brand hover:text-brand text-charcoal px-7 py-4 font-bold text-sm uppercase tracking-wider transition-all"
+                >
+                  Get in Touch
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── PROCESS ──────────────────────────────────────────────── */}
+      <section className="bg-charcoal py-24 md:py-36 relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid opacity-20" />
+        <div className="container-tight relative">
+
+          <span className="section-num">04 — Process</span>
+          <h2 className="font-display font-black text-4xl md:text-6xl text-white mt-3 tracking-tight leading-tight">
+            HOW WE WORK
+          </h2>
+          <p className="mt-4 text-white/50 text-lg max-w-xl">
+            Simple, straightforward. From your first enquiry to on-site delivery.
+          </p>
+
+          <div className="mt-16 grid md:grid-cols-3 gap-px bg-white/10">
+            {process.map(({ step, title, desc }, i) => (
+              <motion.div
+                key={step}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="bg-charcoal p-10 md:p-12 group"
+              >
+                <span className="font-display font-black text-7xl md:text-8xl text-brand/15 group-hover:text-brand/30 transition-colors leading-none">
+                  {step}
+                </span>
+                <h3 className="font-display font-bold text-2xl text-white mt-6 mb-3">{title}</h3>
+                <p className="text-white/55 leading-relaxed text-sm">{desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── LOCATION STRIP ───────────────────────────────────────── */}
+      <section className="bg-muted/50 border-y border-border py-12">
+        <div className="container-tight flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-4">
+            <div className="h-12 w-12 bg-brand flex items-center justify-center shrink-0">
+              <MapPin className="h-6 w-6 text-white" />
+            </div>
+            <div>
+              <p className="font-display font-bold text-charcoal text-lg">Based in Rajkot, Gujarat</p>
+              <p className="text-muted-foreground text-sm">PI-208, Sitaram Park, Motamava, Rajkot — 360005</p>
+            </div>
+          </div>
+          <a
+            href="tel:+918530081327"
+            className="flex items-center gap-3 bg-charcoal hover:bg-black text-white px-7 py-4 font-bold text-sm uppercase tracking-wider transition-all"
+          >
+            <Phone className="h-4 w-4" />
+            +91 85300 81327
+          </a>
+        </div>
+      </section>
+
+      {/* ─── CTA BANNER ───────────────────────────────────────────── */}
+      <section className="relative bg-brand overflow-hidden">
+        <div className="absolute inset-0 bg-grid opacity-15" />
+        {/* Large decorative text */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 font-display font-black text-[12rem] md:text-[16rem] text-white/5 leading-none select-none pointer-events-none translate-x-16">
+          SJS
+        </div>
+        <div className="container-tight relative py-20 md:py-28">
+          <div className="max-w-3xl">
+            <p className="text-white/60 font-semibold uppercase tracking-[0.2em] text-xs mb-5">
+              Ready to start?
+            </p>
+            <h2 className="font-display font-black text-3xl md:text-5xl text-white tracking-tight leading-tight text-balance">
+              NEED CONSTRUCTION CHEMICALS OR WATERPROOFING IN RAJKOT?
+            </h2>
+            <p className="mt-5 text-white/65 text-lg max-w-2xl leading-relaxed">
+              Tell us your requirement — we'll recommend the right products and services and get to work.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 bg-white hover:bg-white/90 text-brand px-8 py-4 font-black text-sm uppercase tracking-wider transition-all shadow-strong"
+              >
+                Get in Touch <ArrowRight className="h-4 w-4" />
+              </Link>
+              <a
+                href="tel:+918530081327"
+                className="inline-flex items-center gap-2 border-2 border-white/30 hover:border-white text-white px-8 py-4 font-bold text-sm uppercase tracking-wider transition-all"
+              >
+                <Phone className="h-4 w-4" />
+                Call: 85300 81327
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </Layout>
   );
 }

@@ -6,7 +6,7 @@ function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
+        <h1 className="text-7xl font-black text-foreground">404</h1>
         <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
         <p className="mt-2 text-sm text-muted-foreground">
           The page you're looking for doesn't exist or has been moved.
@@ -14,7 +14,7 @@ function NotFoundComponent() {
         <div className="mt-6">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex items-center justify-center bg-brand px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-brand-dark"
           >
             Go home
           </Link>
@@ -29,24 +29,21 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Neehal Infra Builder is a 5-page business website for an authorized Redwop Chemicals distributor." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Neehal Infra Builder is a 5-page business website for an authorized Redwop Chemicals distributor." },
+      { title: "SJS Architecture Solutions — Construction Chemicals & Waterproofing, Rajkot" },
+      { name: "description", content: "SJS Architecture Solutions — your complete partner for construction chemicals, waterproofing services, epoxy grout work, and building materials in Rajkot, Gujarat." },
+      { name: "author", content: "SJS Architecture Solutions" },
+      { property: "og:title", content: "SJS Architecture Solutions" },
+      { property: "og:description", content: "Construction chemicals supply and waterproofing services in Rajkot, Gujarat." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
-      { name: "twitter:description", content: "Neehal Infra Builder is a 5-page business website for an authorized Redwop Chemicals distributor." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5e70ac3c-d848-48f5-8b1a-0723ae208ad7/id-preview-ee81e51f--7af4d1aa-6abd-40fb-aa95-8f16f069cfa9.lovable.app-1776856238070.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5e70ac3c-d848-48f5-8b1a-0723ae208ad7/id-preview-ee81e51f--7af4d1aa-6abd-40fb-aa95-8f16f069cfa9.lovable.app-1776856238070.png" },
     ],
     links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap",
       },
+      { rel: "stylesheet", href: appCss },
     ],
   }),
   shellComponent: RootShell,
