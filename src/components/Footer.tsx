@@ -11,11 +11,11 @@ const productLinks = [
 ];
 
 const serviceLinks = [
-  "Construction Chemicals Supply",
-  "Waterproofing Services",
-  "Epoxy Grout Work",
-  "Waterproofing Work",
-  "Premix Work",
+  { label: "Construction Chemicals Supply", slug: "chemicals-supply" },
+  { label: "Waterproofing Services", slug: "waterproofing" },
+  { label: "Epoxy Grout Work", slug: "epoxy-grout" },
+  { label: "Waterproofing Work", slug: "waterproofing-work" },
+  { label: "Premix Work", slug: "premix-work" },
 ];
 
 export function Footer() {
@@ -87,13 +87,14 @@ export function Footer() {
           <h4 className="font-sans font-bold text-xs uppercase tracking-widest text-white/40 mb-5">Services</h4>
           <ul className="space-y-2.5">
             {serviceLinks.map((item) => (
-              <li key={item}>
+              <li key={item.slug}>
                 <Link
-                  to="/services"
+                  to="/services/$slug"
+                  params={{ slug: item.slug }}
                   className="text-sm text-white/60 hover:text-white transition-colors flex items-center gap-2 group"
                 >
                   <span className="h-px w-3 bg-white/20 group-hover:bg-[#CC0000] group-hover:w-4 transition-all" />
-                  {item}
+                  {item.label}
                 </Link>
               </li>
             ))}

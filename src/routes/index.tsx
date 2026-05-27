@@ -223,20 +223,23 @@ function HomePage() {
                 title: "Construction Chemicals Supply",
                 desc: "Complete range of admixtures, waterproofing, tile adhesives, coatings, grouts and more.",
                 image: chemicalsImg,
+                slug: "chemicals-supply",
               },
               {
                 Icon: Droplets,
                 title: "Waterproofing Services",
                 desc: "Professional on-site waterproofing for terraces, roofs, basements and wet areas.",
                 image: waterproofingImg,
+                slug: "waterproofing",
               },
               {
                 Icon: Layers,
                 title: "Epoxy Grout Work",
                 desc: "Stain-resistant, durable epoxy grouting for tiles, industrial floors and high-traffic areas.",
                 image: tilingImg,
+                slug: "epoxy-grout",
               },
-            ].map(({ Icon, title, desc, image }, i) => (
+            ].map(({ Icon, title, desc, image, slug }, i) => (
               <motion.div
                 key={title}
                 initial={{ opacity: 0, y: 20 }}
@@ -265,7 +268,7 @@ function HomePage() {
                     </h3>
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">{desc}</p>
-                  <Link to="/services" className="inline-flex items-center gap-2 text-[#CC0000] font-bold text-sm hover:gap-3 transition-all">
+                  <Link to="/services/$slug" params={{ slug }} className="inline-flex items-center gap-2 text-[#CC0000] font-bold text-sm hover:gap-3 transition-all">
                     Learn More <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
