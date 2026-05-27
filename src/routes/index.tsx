@@ -141,19 +141,19 @@ function HomePage() {
             className="max-w-3xl"
           >
             {/* Redwop partner badge */}
-            <div className="inline-flex items-center gap-3 border border-white/15 bg-white/5 backdrop-blur px-4 py-2.5 mb-8">
+            <div className="inline-flex items-center gap-4 border border-white/15 bg-white/5 backdrop-blur px-5 py-3 mb-8">
               <img
                 src="/images/redwop-logo-white.png"
                 alt="Redwop"
-                className="h-5 w-auto object-contain opacity-90"
+                className="h-9 w-auto object-contain opacity-90"
               />
-              <span className="h-4 w-px bg-white/20" />
+              <span className="h-6 w-px bg-white/20" />
               <span className="font-sans text-xs font-bold uppercase tracking-widest text-white/60">
                 Authorized Dealer · Rajkot, Gujarat
               </span>
             </div>
 
-            <h1 className="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl text-white leading-[1.08] text-balance mb-6">
+            <h1 className="font-display font-extrabold text-3xl sm:text-4xl md:text-[2.6rem] text-white leading-[1.12] text-balance mb-6">
               Rajkot's Trusted Source for{" "}
               <span className="text-[#CC0000]">Construction Chemicals</span>{" "}
               & Waterproofing
