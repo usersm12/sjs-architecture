@@ -22,7 +22,7 @@ export function Footer() {
   return (
     <footer className="bg-[#111111] text-white">
       {/* Main footer body */}
-      <div className="container-tight py-16 grid gap-10 md:grid-cols-4">
+      <div className="container-tight py-12 md:py-16 grid gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
         {/* Brand */}
         <div className="md:col-span-1">
           <img

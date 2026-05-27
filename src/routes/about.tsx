@@ -46,7 +46,7 @@ function AboutPage() {
         <div className="absolute inset-0 bg-dot-pattern opacity-20" />
         <div className="container-tight relative">
           <div className="label-tag mb-4" style={{ color: "#CC0000" }}>About Us</div>
-          <h1 className="font-display font-bold text-3xl md:text-5xl text-white mt-2">
+          <h1 className="font-display font-bold text-2xl md:text-4xl text-white mt-2">
             SJS Architecture Solutions
           </h1>
           <p className="mt-4 text-white/55 max-w-2xl text-lg">
@@ -66,7 +66,7 @@ function AboutPage() {
               transition={{ duration: 0.6 }}
             >
               <div className="label-tag mb-5">Who We Are</div>
-              <h2 className="font-display font-bold text-3xl md:text-4xl text-[#111111] mb-6">
+              <h2 className="font-display font-bold text-2xl md:text-3xl text-[#111111] mb-6">
                 Your Complete Construction Chemicals Partner in Rajkot
               </h2>
               <div className="space-y-5 text-muted-foreground leading-relaxed">

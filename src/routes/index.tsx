@@ -124,16 +124,16 @@ function HomePage() {
   return (
     <Layout>
       {/* ─── HERO ─────────────────────────────────────────────────── */}
-      <section className="relative min-h-[90vh] flex items-center bg-[#111111] overflow-hidden">
+      <section className="relative min-h-[85vh] flex items-center bg-[#111111] overflow-hidden">
         <img
           src={heroImg}
           alt="Construction site in India"
           className="absolute inset-0 w-full h-full object-cover opacity-30"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#111111]/98 via-[#111111]/75 to-[#111111]/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#111111]/98 via-[#111111]/80 to-[#111111]/30" />
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#CC0000]" />
 
-        <div className="container-tight relative z-10 py-28">
+        <div className="container-tight relative z-10 py-14 md:py-28">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -141,56 +141,50 @@ function HomePage() {
             className="max-w-3xl"
           >
             {/* Redwop partner badge */}
-            <div className="inline-flex items-center gap-4 border border-white/15 bg-white/5 backdrop-blur px-5 py-3 mb-8">
+            <div className="inline-flex flex-wrap items-center gap-3 border border-white/15 bg-white/5 px-4 py-3 mb-6">
               <img
                 src="/images/redwop-logo-white.png"
                 alt="Redwop"
-                className="h-14 w-auto object-contain opacity-90"
+                className="h-10 md:h-14 w-auto object-contain opacity-90"
               />
-              <span className="h-6 w-px bg-white/20" />
-              <span className="font-sans text-xs font-bold uppercase tracking-widest text-white/60">
+              <span className="hidden sm:block h-5 w-px bg-white/20" />
+              <span className="font-sans text-[10px] md:text-xs font-bold uppercase tracking-widest text-white/60">
                 Authorized Dealer · Rajkot, Gujarat
               </span>
             </div>
 
-            <h1 className="font-display font-extrabold text-2xl sm:text-3xl md:text-[2rem] text-white leading-[1.15] text-balance mb-6">
+            <h1 className="font-display font-extrabold text-xl sm:text-2xl md:text-[2rem] text-white leading-[1.15] text-balance mb-4">
               Rajkot's Trusted Source for{" "}
               <span className="text-[#CC0000]">Construction Chemicals</span>{" "}
               & Waterproofing
             </h1>
 
-            <p className="text-lg text-white/60 max-w-xl leading-relaxed mb-10">
+            <p className="text-sm md:text-base text-white/60 max-w-xl leading-relaxed mb-8">
               We supply ISI-certified construction chemicals and apply them on-site — one accountable partner for every project, from foundation to finish.
             </p>
 
-            <div className="flex flex-wrap gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 mb-10">
               <Link
                 to="/products"
-                className="inline-flex items-center gap-2 bg-[#CC0000] hover:bg-[#a80000] text-white px-8 py-4 font-bold text-sm uppercase tracking-wide transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-[#CC0000] hover:bg-[#a80000] text-white px-6 py-3.5 font-bold text-sm uppercase tracking-wide transition-colors"
               >
                 Browse Products <ArrowRight className="h-4 w-4" />
               </Link>
               <a
                 href="tel:+918530081327"
-                className="inline-flex items-center gap-2 border border-white/30 hover:border-white text-white px-8 py-4 font-bold text-sm uppercase tracking-wide transition-colors"
+                className="inline-flex items-center justify-center gap-2 border border-white/30 hover:border-white text-white px-6 py-3.5 font-bold text-sm uppercase tracking-wide transition-colors"
               >
                 <Phone className="h-4 w-4" />
                 +91 85300 81327
               </a>
-              <Link
-                to="/services"
-                className="inline-flex items-center gap-2 text-white/50 hover:text-white text-sm font-semibold transition-colors"
-              >
-                View Services <ArrowRight className="h-3.5 w-3.5" />
-              </Link>
             </div>
 
             {/* Hero stats row */}
-            <div className="flex flex-wrap gap-6 border-t border-white/10 pt-8">
+            <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-4 sm:gap-8 border-t border-white/10 pt-6">
               {stats.map((s, i) => (
                 <div key={i} className="flex flex-col">
-                  <span className="font-display font-bold text-2xl text-white">{s.value}</span>
-                  <span className="text-xs text-white/40 uppercase tracking-widest font-semibold">{s.label}</span>
+                  <span className="font-display font-bold text-xl md:text-2xl text-white">{s.value}</span>
+                  <span className="text-[10px] md:text-xs text-white/40 uppercase tracking-widest font-semibold">{s.label}</span>
                 </div>
               ))}
             </div>
@@ -201,20 +195,20 @@ function HomePage() {
       {/* ─── TRUST BAR ────────────────────────────────────────────── */}
       <section className="bg-white border-b border-border">
         <div className="container-tight">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-border">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border">
             {[
               { Icon: ShieldCheck, title: "ISI Certified", desc: "All products tested and certified for quality" },
               { Icon: Truck, title: "Same-Day Delivery", desc: "Fast delivery across Rajkot and surroundings" },
               { Icon: Wrench, title: "Supply & Apply", desc: "Full service — chemicals + on-site application" },
               { Icon: MapPin, title: "Rajkot Based", desc: "PI-208, Sitaram Park, Motamava — walk-ins welcome" },
             ].map(({ Icon, title, desc }) => (
-              <div key={title} className="flex items-start gap-4 p-6 md:p-8 group">
-                <div className="h-11 w-11 border-2 border-[#CC0000] flex items-center justify-center shrink-0 group-hover:bg-[#CC0000] transition-colors">
-                  <Icon className="h-5 w-5 text-[#CC0000] group-hover:text-white transition-colors" />
+              <div key={title} className="flex items-start gap-3 p-5 md:p-7 bg-white group">
+                <div className="h-10 w-10 border-2 border-[#CC0000] flex items-center justify-center shrink-0 group-hover:bg-[#CC0000] transition-colors">
+                  <Icon className="h-4 w-4 text-[#CC0000] group-hover:text-white transition-colors" />
                 </div>
                 <div className="min-w-0">
-                  <p className="font-display font-bold text-sm text-[#111111]">{title}</p>
-                  <p className="text-xs text-muted-foreground mt-1 leading-relaxed">{desc}</p>
+                  <p className="font-display font-bold text-xs md:text-sm text-[#111111]">{title}</p>
+                  <p className="text-[10px] md:text-xs text-muted-foreground mt-1 leading-relaxed hidden sm:block">{desc}</p>
                 </div>
               </div>
             ))}
@@ -541,7 +535,7 @@ function HomePage() {
                     params={{ slug: service.slug }}
                     className="group flex bg-white border border-border hover:border-[#CC0000] hover:shadow-lg transition-all overflow-hidden"
                   >
-                    <div className="w-36 md:w-44 shrink-0 overflow-hidden">
+                    <div className="w-24 sm:w-36 md:w-44 shrink-0 overflow-hidden">
                       <img
                         src={img}
                         alt={service.title}
@@ -549,16 +543,16 @@ function HomePage() {
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
-                    <div className="p-5 flex flex-col justify-center">
-                      <div className="flex items-center gap-2.5 mb-3">
-                        <div className="h-8 w-8 bg-[#CC0000] flex items-center justify-center shrink-0">
-                          <Icon className="h-4 w-4 text-white" />
+                    <div className="p-4 md:p-5 flex flex-col justify-center">
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="h-7 w-7 md:h-8 md:w-8 bg-[#CC0000] flex items-center justify-center shrink-0">
+                          <Icon className="h-3.5 w-3.5 md:h-4 md:w-4 text-white" />
                         </div>
-                        <h3 className="font-display font-bold text-sm text-[#111111] group-hover:text-[#CC0000] transition-colors leading-tight">
+                        <h3 className="font-display font-bold text-xs md:text-sm text-[#111111] group-hover:text-[#CC0000] transition-colors leading-tight">
                           {service.title}
                         </h3>
                       </div>
-                      <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2 mb-3">{service.heroDescription}</p>
+                      <p className="text-[10px] md:text-xs text-muted-foreground leading-relaxed line-clamp-2 mb-2">{service.heroDescription}</p>
                       <span className="inline-flex items-center gap-1.5 text-[#CC0000] font-bold text-xs group-hover:gap-2.5 transition-all">
                         Learn More <ArrowRight className="h-3.5 w-3.5" />
                       </span>

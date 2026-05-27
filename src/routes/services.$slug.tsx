@@ -106,34 +106,34 @@ function ServiceDetailPage() {
         </div>
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#CC0000]" />
 
-        <div className="container-tight relative py-20 md:py-28">
+        <div className="container-tight relative py-12 md:py-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <div className="flex items-center gap-3 mb-5">
-              <div className="h-12 w-12 bg-[#CC0000] flex items-center justify-center shrink-0">
-                <Icon className="h-6 w-6 text-white" />
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-10 w-10 md:h-12 md:w-12 bg-[#CC0000] flex items-center justify-center shrink-0">
+                <Icon className="h-5 w-5 md:h-6 md:w-6 text-white" />
               </div>
               <span className="font-sans text-xs font-bold uppercase tracking-widest text-white/40">
                 {service.category}
               </span>
             </div>
-            <p className="font-sans text-xs font-bold uppercase tracking-widest text-[#CC0000] mb-3">
+            <p className="font-sans text-xs font-bold uppercase tracking-widest text-[#CC0000] mb-2">
               SJS Architecture Solutions
             </p>
-            <h1 className="font-display font-bold text-4xl md:text-6xl text-white leading-[1.1] text-balance mb-4">
+            <h1 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-white leading-[1.15] text-balance mb-3">
               {service.title}
             </h1>
-            <p className="text-lg md:text-xl text-[#CC0000] font-display font-semibold mb-5 italic">
+            <p className="text-sm md:text-base text-[#CC0000] font-display font-semibold mb-4 italic">
               "{service.tagline}"
             </p>
-            <p className="text-white/60 text-lg leading-relaxed max-w-2xl mb-8">
+            <p className="text-white/60 text-sm md:text-base leading-relaxed max-w-2xl mb-6">
               {service.heroDescription}
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3">
               <a
                 href={`https://wa.me/918530081327?text=${encodeURIComponent(`Hi, I need more information about your ${service.title} service.`)}`}
                 target="_blank"
@@ -162,9 +162,9 @@ function ServiceDetailPage() {
       </section>
 
       {/* Key Stats */}
-      <section className="bg-[#CC0000] py-8">
+      <section className="bg-[#CC0000] py-6 md:py-8">
         <div className="container-tight">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {service.keyStats.map((stat, i) => (
               <motion.div
                 key={i}
@@ -174,7 +174,7 @@ function ServiceDetailPage() {
                 transition={{ duration: 0.4, delay: i * 0.08 }}
                 className="text-center"
               >
-                <div className="font-display font-bold text-3xl md:text-4xl text-white mb-1">
+                <div className="font-display font-bold text-2xl md:text-3xl text-white mb-1">
                   {stat.value}
                 </div>
                 <div className="text-xs font-bold uppercase tracking-widest text-white/60">
@@ -186,10 +186,26 @@ function ServiceDetailPage() {
         </div>
       </section>
 
+      {/* Mobile enquiry CTA — visible only on small screens */}
+      <div className="lg:hidden bg-white border-b border-border px-4 py-3 flex gap-3">
+        <a
+          href="#enquiry"
+          className="flex-1 flex items-center justify-center gap-2 bg-[#CC0000] text-white py-3 text-sm font-bold uppercase tracking-wide"
+        >
+          Get a Quote
+        </a>
+        <a
+          href="tel:+918530081327"
+          className="flex items-center justify-center gap-2 border border-[#CC0000] text-[#CC0000] px-4 py-3 text-sm font-bold"
+        >
+          <Phone className="h-4 w-4" />
+        </a>
+      </div>
+
       {/* Main Content */}
-      <div className="py-16 md:py-24">
+      <div className="py-10 md:py-20">
         <div className="container-tight">
-          <div className="grid gap-16 lg:grid-cols-[1fr_380px]">
+          <div className="grid gap-10 lg:gap-16 lg:grid-cols-[1fr_380px]">
 
             {/* Left Column */}
             <div>
@@ -360,7 +376,7 @@ function ServiceDetailPage() {
             <div>
               <div
                 id="enquiry"
-                className="sticky top-[120px] bg-white border border-border shadow-xl"
+                className="sticky top-[76px] md:top-[110px] bg-white border border-border shadow-xl"
               >
                 {/* Form header */}
                 <div className="bg-[#111111] p-6 relative overflow-hidden">

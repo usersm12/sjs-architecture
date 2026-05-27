@@ -48,7 +48,7 @@ function ServicesIndexPage() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="bg-[#111111] py-20 md:py-28 relative overflow-hidden">
+      <section className="bg-[#111111] py-12 md:py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-dot-pattern opacity-20" />
         {/* Subtle red accent line */}
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#CC0000]" />
@@ -58,16 +58,16 @@ function ServicesIndexPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="label-tag mb-6" style={{ color: "#CC0000" }}>Our Services</div>
-            <h1 className="font-display font-bold text-4xl md:text-6xl text-white leading-[1.1] max-w-3xl text-balance">
+            <div className="label-tag mb-4" style={{ color: "#CC0000" }}>Our Services</div>
+            <h1 className="font-display font-bold text-3xl md:text-5xl text-white leading-[1.1] max-w-3xl text-balance">
               We Supply.<br />
               <span className="text-[#CC0000]">We Apply.</span><br />
               You Get Results.
             </h1>
-            <p className="mt-6 text-white/55 max-w-xl text-lg leading-relaxed">
+            <p className="mt-4 text-white/55 max-w-xl text-sm md:text-base leading-relaxed">
               From concrete admixtures and waterproofing chemicals to on-site application by trained specialists — complete construction chemistry solutions under one roof in Rajkot.
             </p>
-            <div className="flex flex-wrap gap-4 mt-8">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-6">
               <a
                 href="tel:+918530081327"
                 className="inline-flex items-center gap-2 bg-[#CC0000] hover:bg-[#a80000] text-white px-7 py-3.5 font-bold text-sm uppercase tracking-wide transition-colors"

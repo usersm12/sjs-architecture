@@ -57,7 +57,7 @@ function ContactPage() {
         <div className="absolute inset-0 bg-dot-pattern opacity-20" />
         <div className="container-tight relative">
           <div className="label-tag mb-4" style={{ color: "#CC0000" }}>Get in Touch</div>
-          <h1 className="font-display font-bold text-3xl md:text-5xl text-white mt-2">
+          <h1 className="font-display font-bold text-2xl md:text-4xl text-white mt-2">
             Contact Us
           </h1>
           <p className="mt-4 text-white/55 max-w-2xl text-lg">
@@ -68,7 +68,7 @@ function ContactPage() {
 
       <section className="container-tight py-14 md:py-20">
         {/* Contact cards */}
-        <div className="grid gap-5 md:grid-cols-3 mb-14">
+        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 mb-10">
           {contacts.map(({ Icon, title, content, href, isText }, i) => (
             <motion.div
               key={title}
