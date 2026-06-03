@@ -4,15 +4,27 @@ import { Layout } from "@/components/Layout";
 import { productCategories } from "@/data/products";
 import { Mail, Box, Phone, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { SITE_URL, canonicalMeta, jsonLdScript, productListSchema } from "@/config/seo";
 
 export const Route = createFileRoute("/products")({
   head: () => ({
     meta: [
-      { title: "Products — SJS Architecture Solutions | Construction Chemicals Rajkot" },
-      { name: "description", content: "Complete range of construction chemicals: concrete admixtures, waterproofing, tile adhesives, repair mortars, coatings, flooring, and building materials." },
-      { property: "og:title", content: "Our Products — SJS Architecture Solutions" },
-      { property: "og:description", content: "From concrete admixtures to waterproofing — every construction chemical you need, in stock in Rajkot." },
+      { title: "Construction Chemicals Rajkot — Admixtures, Waterproofing, Tile Adhesives | SJS Architecture Solutions" },
+      {
+        name: "description",
+        content:
+          "Complete range of construction chemicals in stock in Rajkot — concrete admixtures, waterproofing chemicals, tile adhesives, epoxy grouts, repair mortars, coatings, flooring systems, and building materials. Authorized Redwop dealer.",
+      },
+      {
+        name: "keywords",
+        content:
+          "construction chemicals Rajkot, concrete admixtures Gujarat, waterproofing chemicals, tile adhesive Rajkot, epoxy grout, repair mortar, building materials Rajkot, Redwop products, SMARZKOT, POLYCOTE, TERATILE, PLASTCONE",
+      },
+      { property: "og:title", content: "Construction Chemicals Rajkot — SJS Architecture Solutions" },
+      { property: "og:description", content: "50+ construction chemicals in stock in Rajkot — admixtures, waterproofing, tile adhesives, epoxy grouts, repair mortars." },
+      ...canonicalMeta("/products"),
     ],
+    scripts: [jsonLdScript(productListSchema(productCategories))],
   }),
   component: ProductsPage,
 });

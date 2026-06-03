@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Layout } from "@/components/Layout";
 import { services } from "@/data/services";
 import { Package, Droplets, Layers, Hammer, ClipboardList, ArrowRight, Phone, CheckCircle } from "lucide-react";
+import { SITE_URL, SITE_NAME, canonicalMeta, jsonLdScript, breadcrumbSchema } from "@/config/seo";
 
 const iconMap: Record<string, React.ElementType> = {
   Package,
@@ -32,14 +33,42 @@ const reasons = [
   "Same-day delivery within Rajkot",
 ];
 
+const servicesPageSchema = [
+  breadcrumbSchema([
+    { name: "Home", url: SITE_URL },
+    { name: "Services", url: `${SITE_URL}/services` },
+  ]),
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    url: `${SITE_URL}/services`,
+    name: "Construction Services — SJS Architecture Solutions",
+    description:
+      "Waterproofing services, epoxy grout work, premix mortar application, and construction chemicals supply in Rajkot, Gujarat.",
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    provider: { "@id": `${SITE_URL}/#business` },
+  },
+];
+
 export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
-      { title: "Services — SJS Architecture Solutions | Waterproofing & Construction Chemicals Rajkot" },
-      { name: "description", content: "Construction chemicals supply, waterproofing services, epoxy grout, and premix application in Rajkot, Gujarat. Expert team, ISI-certified products, warranty backed." },
-      { property: "og:title", content: "Our Services — SJS Architecture Solutions" },
-      { property: "og:description", content: "Professional waterproofing, epoxy grouting, and construction chemical supply in Rajkot." },
+      { title: "Waterproofing & Construction Services Rajkot | SJS Architecture Solutions" },
+      {
+        name: "description",
+        content:
+          "Professional construction services in Rajkot — waterproofing, epoxy grout work, premix mortar application, and complete construction chemicals supply. ISI-certified products, written warranty.",
+      },
+      {
+        name: "keywords",
+        content:
+          "waterproofing services Rajkot, epoxy grout Rajkot, premix mortar Rajkot, construction chemicals supply Gujarat, waterproofing contractor Rajkot, terrace waterproofing Rajkot, basement waterproofing Gujarat",
+      },
+      { property: "og:title", content: "Construction Services Rajkot — SJS Architecture Solutions" },
+      { property: "og:description", content: "Waterproofing, epoxy grouting, premix application and chemical supply in Rajkot. ISI-certified products, written warranty." },
+      ...canonicalMeta("/services"),
     ],
+    scripts: [jsonLdScript(servicesPageSchema)],
   }),
   component: ServicesIndexPage,
 });

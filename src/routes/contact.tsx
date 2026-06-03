@@ -4,15 +4,64 @@ import { Layout } from "@/components/Layout";
 import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
 import { productCategories } from "@/data/products";
 import { motion } from "framer-motion";
+import { SITE_URL, SITE_NAME, PHONE, EMAIL, ADDRESS, GEO, canonicalMeta, jsonLdScript, breadcrumbSchema } from "@/config/seo";
+
+const contactSchema = [
+  breadcrumbSchema([
+    { name: "Home", url: SITE_URL },
+    { name: "Contact", url: `${SITE_URL}/contact` },
+  ]),
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    url: `${SITE_URL}/contact`,
+    name: `Contact ${SITE_NAME}`,
+    description: "Contact SJS Architecture Solutions for product enquiries, waterproofing services, or project requirements in Rajkot, Gujarat.",
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": `${SITE_URL}/#business`,
+    name: SITE_NAME,
+    telephone: PHONE,
+    email: EMAIL,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: ADDRESS.street,
+      addressLocality: ADDRESS.city,
+      addressRegion: ADDRESS.region,
+      postalCode: ADDRESS.postalCode,
+      addressCountry: ADDRESS.country,
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: GEO.lat,
+      longitude: GEO.lng,
+    },
+    hasMap: `https://www.google.com/maps?q=PI-208+Sitaram+Park+Rajkot+360005`,
+  },
+];
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — SJS Architecture Solutions | Rajkot, Gujarat" },
-      { name: "description", content: "Contact SJS Architecture Solutions in Rajkot for product enquiries, waterproofing services, or project requirements. Call +91 85300 81327." },
-      { property: "og:title", content: "Contact SJS Architecture Solutions" },
-      { property: "og:description", content: "Get in touch for product enquiries, waterproofing services, or project requirements in Rajkot." },
+      { title: "Contact SJS Architecture Solutions — Construction Chemicals Rajkot | +91 85300 81327" },
+      {
+        name: "description",
+        content:
+          "Contact SJS Architecture Solutions in Rajkot, Gujarat — +91 85300 81327. Enquire about construction chemicals, waterproofing services, epoxy grout, or any project requirement.",
+      },
+      {
+        name: "keywords",
+        content:
+          "contact SJS Architecture Solutions, construction chemicals Rajkot phone, waterproofing Rajkot contact, building materials supplier Rajkot",
+      },
+      { property: "og:title", content: "Contact SJS Architecture Solutions — Rajkot" },
+      { property: "og:description", content: "Call +91 85300 81327 or email us for construction chemicals, waterproofing services, and project enquiries in Rajkot, Gujarat." },
+      ...canonicalMeta("/contact"),
     ],
+    scripts: [jsonLdScript(contactSchema)],
   }),
   component: ContactPage,
 });

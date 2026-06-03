@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Layout } from "@/components/Layout";
 import { ServiceLeadForm } from "@/components/ServiceLeadForm";
 import { services, getServiceBySlug } from "@/data/services";
+import { canonicalMeta, jsonLdScript, serviceSchema } from "@/config/seo";
 import {
   Package,
   Droplets,
@@ -37,9 +38,24 @@ export const Route = createFileRoute("/services/$slug")({
     meta: [
       { title: loaderData.seoTitle },
       { name: "description", content: loaderData.seoDescription },
+      {
+        name: "keywords",
+        content: `${loaderData.title} Rajkot, ${loaderData.title} Gujarat, construction services Rajkot, SJS Architecture Solutions`,
+      },
       { property: "og:title", content: loaderData.seoTitle },
       { property: "og:description", content: loaderData.seoDescription },
       { property: "og:image", content: loaderData.heroImage },
+      ...canonicalMeta(`/services/${loaderData.slug}`),
+    ],
+    scripts: [
+      jsonLdScript(
+        serviceSchema({
+          name: loaderData.title,
+          description: loaderData.seoDescription,
+          slug: loaderData.slug,
+          faqs: loaderData.faqs,
+        })
+      ),
     ],
   }),
   component: ServiceDetailPage,

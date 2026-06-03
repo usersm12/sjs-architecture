@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Layout } from "@/components/Layout";
 import { CircleCheck as CheckCircle2, Package, Droplets, MapPin, Star, ArrowRight } from "lucide-react";
+import { SITE_URL, SITE_NAME, canonicalMeta, jsonLdScript, breadcrumbSchema } from "@/config/seo";
 
 const whyCards = [
   {
@@ -26,14 +27,42 @@ const whyCards = [
   },
 ];
 
+const aboutSchema = [
+  breadcrumbSchema([
+    { name: "Home", url: SITE_URL },
+    { name: "About", url: `${SITE_URL}/about` },
+  ]),
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    url: `${SITE_URL}/about`,
+    name: `About ${SITE_NAME}`,
+    description:
+      "SJS Architecture Solutions is an authorized Redwop dealer and complete construction chemicals supplier in Rajkot, Gujarat — supply and on-site application under one roof.",
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    about: { "@id": `${SITE_URL}/#business` },
+  },
+];
+
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — SJS Architecture Solutions | Construction Chemicals & Waterproofing Rajkot" },
-      { name: "description", content: "SJS Architecture Solutions is a trusted construction chemicals supplier and waterproofing service provider based in Rajkot, Gujarat." },
-      { property: "og:title", content: "About SJS Architecture Solutions" },
-      { property: "og:description", content: "Your complete partner for construction chemicals and waterproofing services in Rajkot." },
+      { title: "About SJS Architecture Solutions — Construction Chemicals Supplier Rajkot" },
+      {
+        name: "description",
+        content:
+          "SJS Architecture Solutions is an authorized Redwop dealer and trusted construction chemicals supplier in Rajkot, Gujarat. We supply ISI-certified chemicals and provide professional waterproofing and epoxy grouting services.",
+      },
+      {
+        name: "keywords",
+        content:
+          "SJS Architecture Solutions, construction chemicals Rajkot, waterproofing company Rajkot, Redwop authorized dealer Gujarat, about us",
+      },
+      { property: "og:title", content: "About SJS Architecture Solutions — Construction Chemicals Rajkot" },
+      { property: "og:description", content: "Authorized Redwop dealer in Rajkot. Supply + apply — complete construction chemistry solutions in one place." },
+      ...canonicalMeta("/about"),
     ],
+    scripts: [jsonLdScript(aboutSchema)],
   }),
   component: AboutPage,
 });
